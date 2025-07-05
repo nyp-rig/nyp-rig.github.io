@@ -1,0 +1,23 @@
+{
+  "name": "robotics-website-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "parcel ./src/*.html",
+    "prebuild": "npx rimraf build",
+    "build": "parcel build ./src/*.html --dist-dir dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.12.4",
+  "devDependencies": {
+    "@parcel/config-default": "^2.15.4",
+    "@parcel/transformer-sass": "2.15.4",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.7",
+    "jquery": "^3.7.1",
+    "parcel": "^2.15.4",
+    "rimraf": "^6.0.1"
+  }
+}

@@ -1,0 +1,17 @@
+@import "./base.scss";
+
+.join-us-special-contain{
+  background: linear-gradient(156deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: $navbar-brand-height + $navbar-padding-y*2 + $navbar-brand-padding-y*2;
+}
+.join-us-box{
+  width: 50vw;
+  min-width: 300px;
+  padding: 2em;
+  border-radius: 1em;
+}
