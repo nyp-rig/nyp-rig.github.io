@@ -10,14 +10,14 @@
   <link rel="stylesheet" href="./scss/landing.scss"></style>
 </head>
 <body>
-  <div class="introScreen" id="introScreen">
+  <!-- <div class="introScreen" id="introScreen">
     
   </div>
   <script>
     if (document.referrer && document.referrer.startsWith(window.location.origin)){
       document.getElementById('introScreen').remove();
     }
-  </script>
+  </script> -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">NYP RIG</a>
@@ -46,24 +46,18 @@
     </div>
   </nav>
   <div id="rootContainer">
-    <div class="container section" style="background-image: url('./assets/images/bg.png');">
+    <div class="section" style="background-image: url('./assets/images/bg.png');">
       <!-- <img class="bg" src="https://placehold.co/4032x3024"></img> -->
       <!-- Content here -->
       
       <div class="sectionWordContain">
-        <div class="wordPlaceholder">
+        <div class="mainWordContain">
           <h1>NYP Robotics Interest Group</h1>
           <h3>Be part of something awesome today!</h3>
-        </div>
-        <div class="word">
-          <h1>NYP Robotics Interest Group</h1>
-          <h3>Be part of something awesome today!</h3>
-        </div>
-        <div class="wordBackground">
-          <!-- <div class="wordBackgroundEffect"></div> -->
         </div>
       </div>
     </div>
+    <div class="section"></div>
   </div>
   <script src="./js/index.js" type="module"></script>
 </body>

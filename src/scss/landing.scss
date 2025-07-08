@@ -1,9 +1,5 @@
 @import "./base.scss";
 
-nav{
-  z-index: 9;
-}
-
 .introScreen{
   display: grid;
   position: absolute;
@@ -11,23 +7,29 @@ nav{
   width: 100dvw;
   height: 100dvh;
   background: black;
-  z-index: 10;
+  z-index: 1031;
 }
 
 #rootContainer{
   height: 100dvh;
   width: 100dvw;
-  overflow: auto;
+  overflow: hidden auto;//y-axis scrollbar may not be able to overlay
+  scroll-snap-type: y proximity;
+  display: flex;
+  flex-direction: column;
 }
 
 .section{
   position: relative;
   min-width: 100dvw;
-  height: 100dvh;
+  min-height: 100dvh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  padding: 0;
   padding-top: $navbar-brand-height + $navbar-padding-y*2 + $navbar-brand-padding-y*2;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 }
 
 .sectionWordContain{
@@ -35,62 +37,50 @@ nav{
   bottom: 15dvh;
   right: 10dvh;
   text-align: right;
-  padding: 0.5em;
   overflow: hidden;
 }
-
-.sectionWordContain .wordBackground{
+.sectionWordContain .mainWordContain::before{
   position: absolute;
-  inset: 0;
-  background-color: black;
-  z-index: 1;
-  animation: textBgAnim 0.75s ease-out forwards;
+  z-index: 0;
+  inset: 100% 0 0 0;
+  content: "";
   width: 100%;
   height: 100%;
+  background-color: black;
 }
-// .sectionWordContain .wordBackground .wordBackgroundEffect{
-//   height: 5%;
-//   background-color: #fff;
-//   animation: whiteBoxAnim 5s forwards;
-// }
 
-.wordPlaceholder{
+.sectionWordContain .mainWordContain{
   position: relative;
-  opacity: 0;
+  background-color: black;
+  padding: 0.5em;
+  translate: 100% -100%;
+  animation: wordIntroTranslation 1.5s forwards;
+  // animation-delay: 1s;
 }
-.sectionWordContain .word{
+.sectionWordContain .mainWordContain::after{
+  content: "";
   position: absolute;
   inset: 0;
-  z-index: 2;
-  color: #fff;
-  animation: textBgAnim 0.75s ease-out forwards;
-}
-@keyframes textBgAnim {
-  0%{
-    right: -100%;
-    top: -100%;
-  }
-  100%{
-    right: 0%;
-    top: 0%;
-  }
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  animation: wordIntroTranslationEffectPart1 1.5s forwards;
+  // animation-delay: 1s;
 }
 
-// @keyframes whiteBoxAnim{
-//   0%{
-//     top: 0%;
-//     width: 100%;
-//     opacity: 0;
-//   }
-//   5%{
-//     opacity: 1;
-//   }
-//   30%{
-//     opacity: 1;
-//   }
-//   65%{
-//     top: -100%;
-//     width: 0%;
-//     opacity: 0;
-//   }
-// }
+@keyframes wordIntroTranslation {
+  0%{
+    translate: 100% -100%;
+  }
+  100%{
+    translate: 0% 0%;
+  }
+}
+@keyframes wordIntroTranslationEffectPart1 {
+  0%{
+    translate: 0% 100%;
+  }
+  100%{
+    translate: -100% 0%;
+  }
+}
