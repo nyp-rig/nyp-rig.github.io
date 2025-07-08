@@ -30,3 +30,11 @@ $theme-colors: (
   .navbar-brand{
     user-select: none;
   }
+
+  .join-us-nav-btn-contain a{
+    transform: scale(1);
+    transition: all 0.5s;
+  }
+  .join-us-nav-btn-contain a:hover{
+    transform: scale(1.2);
+  }

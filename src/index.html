@@ -7,10 +7,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <title>NYP ROBOTICS INTEREST GROUP</title>
-  <link rel="stylesheet" href="./scss/base.scss"></style>
+  <link rel="stylesheet" href="./scss/landing.scss"></style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="introScreen" id="introScreen">
+    
+  </div>
+  <script>
+    if (document.referrer && document.referrer.startsWith(window.location.origin)){
+      document.getElementById('introScreen').remove();
+    }
+  </script>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">NYP RIG</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,6 +45,26 @@
       </div>
     </div>
   </nav>
+  <div id="rootContainer">
+    <div class="container section" style="background-image: url('./assets/images/bg.png');">
+      <!-- <img class="bg" src="https://placehold.co/4032x3024"></img> -->
+      <!-- Content here -->
+      
+      <div class="sectionWordContain">
+        <div class="wordPlaceholder">
+          <h1>NYP Robotics Interest Group</h1>
+          <h3>Be part of something awesome today!</h3>
+        </div>
+        <div class="word">
+          <h1>NYP Robotics Interest Group</h1>
+          <h3>Be part of something awesome today!</h3>
+        </div>
+        <div class="wordBackground">
+          <!-- <div class="wordBackgroundEffect"></div> -->
+        </div>
+      </div>
+    </div>
+  </div>
   <script src="./js/index.js" type="module"></script>
 </body>
 </html>

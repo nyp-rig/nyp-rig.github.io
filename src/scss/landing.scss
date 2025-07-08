@@ -1,0 +1,96 @@
+@import "./base.scss";
+
+nav{
+  z-index: 9;
+}
+
+.introScreen{
+  display: grid;
+  position: absolute;
+  inset: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background: black;
+  z-index: 10;
+}
+
+#rootContainer{
+  height: 100dvh;
+  width: 100dvw;
+  overflow: auto;
+}
+
+.section{
+  position: relative;
+  min-width: 100dvw;
+  height: 100dvh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: $navbar-brand-height + $navbar-padding-y*2 + $navbar-brand-padding-y*2;
+}
+
+.sectionWordContain{
+  position: absolute;
+  bottom: 15dvh;
+  right: 10dvh;
+  text-align: right;
+  padding: 0.5em;
+  overflow: hidden;
+}
+
+.sectionWordContain .wordBackground{
+  position: absolute;
+  inset: 0;
+  background-color: black;
+  z-index: 1;
+  animation: textBgAnim 0.75s ease-out forwards;
+  width: 100%;
+  height: 100%;
+}
+// .sectionWordContain .wordBackground .wordBackgroundEffect{
+//   height: 5%;
+//   background-color: #fff;
+//   animation: whiteBoxAnim 5s forwards;
+// }
+
+.wordPlaceholder{
+  position: relative;
+  opacity: 0;
+}
+.sectionWordContain .word{
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  color: #fff;
+  animation: textBgAnim 0.75s ease-out forwards;
+}
+@keyframes textBgAnim {
+  0%{
+    right: -100%;
+    top: -100%;
+  }
+  100%{
+    right: 0%;
+    top: 0%;
+  }
+}
+
+// @keyframes whiteBoxAnim{
+//   0%{
+//     top: 0%;
+//     width: 100%;
+//     opacity: 0;
+//   }
+//   5%{
+//     opacity: 1;
+//   }
+//   30%{
+//     opacity: 1;
+//   }
+//   65%{
+//     top: -100%;
+//     width: 0%;
+//     opacity: 0;
+//   }
+// }
