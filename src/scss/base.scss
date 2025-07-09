@@ -17,25 +17,40 @@ $theme-colors: (
   "danger":     #E3170A,
   "light":      $light,
   "dark":       $dark
-  );
-  @import "../../node_modules/bootstrap/scss/bootstrap";
-  
-  :root{
-    color-scheme: only dark;
-    --bs-font-sans-serif: "Share Tech Mono", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  }
-  
-  .join-us-nav-btn-contain{
-    margin-left: auto;
-  }
-  .navbar-brand{
-    user-select: none;
-  }
+);
+@import "../../node_modules/bootstrap/scss/bootstrap";
 
-  .join-us-nav-btn-contain a{
-    transform: scale(1);
-    transition: all 0.5s;
-  }
-  .join-us-nav-btn-contain a:hover{
-    transform: scale(1.2);
-  }
+:root{
+  color-scheme: only dark;
+  --bs-font-sans-serif: "Share Tech Mono", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.join-us-nav-btn-contain{
+  margin-left: auto;
+}
+.navbar-brand{
+  user-select: none;
+}
+
+.join-us-nav-btn-contain a{
+  transform: scale(1);
+  transition: all 0.5s;
+}
+.join-us-nav-btn-contain a:hover{
+  transform: scale(1.2);
+}
+
+.navbar{
+  --bs-bg-opacity: 0.5;
+  backdrop-filter: blur(3px);
+}
+
+
+#rootContainer{
+  height: 100dvh;
+  width: 100dvw;
+  overflow: auto;//y-axis scrollbar may not be able to overlay
+  scroll-snap-type: y mandatory;
+  display: flex;
+  flex-direction: column;
+}
