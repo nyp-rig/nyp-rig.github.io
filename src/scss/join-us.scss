@@ -2,7 +2,7 @@
 
 .join-us-special-contain{
   background: linear-gradient(156deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,6 +14,7 @@
   min-width: 300px;
   padding: 2em;
   border-radius: 1em;
+  background-color: $dark;
 }
 
 
