@@ -2,56 +2,17 @@
 
 .join-us-special-contain{
   background: linear-gradient(156deg, rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-top: $navbar-brand-height + $navbar-padding-y*2 + $navbar-brand-padding-y*2;
+  height: 100dvh;
+  overflow: auto;
+  padding: ($navbar-brand-height + $navbar-padding-y*2 + $navbar-brand-padding-y*2 + 1.5rem) 1em 1em 1em;
 }
 .join-us-box{
   width: 50vw;
+  margin: auto;
   min-width: 300px;
   padding: 2em;
   border-radius: 1em;
   background-color: $dark;
-}
+  max-width: 600px;
 
-
-// Added By Lucas 7 July
-form {
-  max-width: 500px;
-  margin: 20px auto;
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-}
-
-label {
-  font-weight: bold;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 100%;
-  padding: 8px;
-  margin-top: 4px;
-  margin-bottom: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-input[type="submit"] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 10px 18px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-input[type="submit"]:hover {
-  background-color: #45a049;
 }

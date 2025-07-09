@@ -41,29 +41,51 @@
       </div>
     </div>
   </nav>
-  <div class="container-fluid join-us-special-contain">
+  <div class="join-us-special-contain">
     <form class="join-us-box"
       action="https://docs.google.com/forms/d/e/1FAIpQLSfsMr1gZWeCYxm56wmyequeWXvSGnZL1knWkdR3IWcYGVo6Ag/formResponse"
       method="POST" target="_self">
-      <label>Email:</label>
-      <input type="email" name="emailAddress" placeholder="Enter your NYP Email Address Here" required><br><br>
+      <div class="mb-3">
+        <label class="form-label">Email:</label>
+        <input class="form-control" type="email" name="emailAddress" placeholder="Enter your NYP email address here" required>
+      </div>
 
-      <label>Full Name:</label>
-      <input type="text" name="entry.851075444" required><br>
+      <div class="mb-3">
+        <label class="form-label">Full Name:</label>
+        <input class="form-control" type="text" name="entry.851075444" required>
+      </div>
+        
+      <div class="mb-3">  
+        <label class="form-label">Year:</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="entry.207949549" value="PFP" required>
+          <label class="form-check-label">PFP</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="entry.207949549" value="Year 1" required>
+          <label class="form-check-label">Year 1</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="entry.207949549" value="Year 2" required>
+          <label class="form-check-label">Year 2</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="entry.207949549" value="Year 3" required>
+          <label class="form-check-label">Year 3</label>
+        </div>
+      </div>
 
-      <label>Year:</label><br>
-      <label><input type="radio" name="entry.207949549" value="PFP" required> PFP</label><br>
-      <label><input type="radio" name="entry.207949549" value="Year 1" required> Year 1</label><br>
-      <label><input type="radio" name="entry.207949549" value="Year 2" required> Year 2</label><br>
-      <label><input type="radio" name="entry.207949549" value="Year 3" required> Year 3</label><br><br>
+      <div class="mb-3">  
+        <label class="form-label">Class (e.g. S1-1):</label>
+        <input class="form-control" type="text" name="entry.897263461" required>
+      </div>
+        
+      <div class="mb-3">
+        <label class="form-label">Reasons for Joining:</label>
+        <textarea class="form-control" name="entry.1365629489" rows="4" cols="50" required></textarea>
+      </div>
 
-      <label>Class (e.g. S1-1):</label>
-      <input type="text" name="entry.897263461" required><br><br>
-
-      <label>Reasons for Joining:</label><br>
-      <textarea name="entry.1365629489" rows="4" cols="50" required></textarea><br><br>
-
-      <input type="submit" value="Submit">
+      <input class="btn btn-success" type="submit" value="Submit">
     </form>
   </div>
   <script src="./js/index.js" type="module"></script>
