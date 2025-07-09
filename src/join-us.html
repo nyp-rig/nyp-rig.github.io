@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +8,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
   <title>NYP ROBOTICS INTEREST GROUP</title>
-  <!-- <link rel="stylesheet" href="./scss/index.scss"></style> -->
-  <link rel="stylesheet" href="./scss/join-us.scss"></style>
+  <link rel="stylesheet" href="./scss/join-us.scss">
+  </style>
 </head>
+
 <body>
   <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">NYP RIG</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -38,28 +41,32 @@
       </div>
     </div>
   </nav>
-
   <div class="container-fluid join-us-special-contain">
-    <div class="card join-us-box">
-      <figure class="text-center">
-        <h2>Join Us</h2>
-        <figcaption>
-          Become a part of the Robotics Intrest Group Today!
-        </figcaption>
-      </figure>
-      <form class="card-body">
-        <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        </div>
-        <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-        <!-- TODO: ADD SUBMIT BUTTON, CHANGE FORM INPUT, LINK TO GOOGLE FORMS -->
-      </form>
-    </div>
+    <form class="join-us-box"
+      action="https://docs.google.com/forms/d/e/1FAIpQLSfsMr1gZWeCYxm56wmyequeWXvSGnZL1knWkdR3IWcYGVo6Ag/formResponse"
+      method="POST" target="_self">
+      <label>Email:</label>
+      <input type="email" name="emailAddress" placeholder="Enter your NYP Email Address Here" required><br><br>
+
+      <label>Full Name:</label>
+      <input type="text" name="entry.851075444" required><br>
+
+      <label>Year:</label><br>
+      <label><input type="radio" name="entry.207949549" value="PFP" required> PFP</label><br>
+      <label><input type="radio" name="entry.207949549" value="Year 1" required> Year 1</label><br>
+      <label><input type="radio" name="entry.207949549" value="Year 2" required> Year 2</label><br>
+      <label><input type="radio" name="entry.207949549" value="Year 3" required> Year 3</label><br><br>
+
+      <label>Class (e.g. S1-1):</label>
+      <input type="text" name="entry.897263461" required><br><br>
+
+      <label>Reasons for Joining:</label><br>
+      <textarea name="entry.1365629489" rows="4" cols="50" required></textarea><br><br>
+
+      <input type="submit" value="Submit">
+    </form>
   </div>
   <script src="./js/index.js" type="module"></script>
 </body>
+
 </html>
