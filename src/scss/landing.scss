@@ -1,0 +1,13 @@
+@import "./base.scss";
+@import "./pageCover.scss";
+
+.introScreen{
+  display: grid;
+  position: absolute;
+  inset: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background: black;
+  z-index: 1031;
+}
+

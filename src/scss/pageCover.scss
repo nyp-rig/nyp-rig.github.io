@@ -1,0 +1,76 @@
+
+.section{
+  position: relative;
+  min-height: 100dvh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 0;
+  padding-top: $navbar-brand-height + $navbar-padding-y*2 + $navbar-brand-padding-y*2;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+.sectionMedia{
+  position: absolute;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  inset: 0;
+}
+
+.sectionWordContain{
+  position: absolute;
+  bottom: 12dvh;
+  right: 10dvh;
+  text-align: right;
+  overflow: hidden;
+}
+
+.sectionWordContain .mainWordContain{
+  position: relative;
+  background-color: black;
+  padding: 0.5em;
+  translate: 100% -100%;
+  animation: wordIntroTranslation 1s ease-out forwards;
+  animation-delay: 1s;
+}
+
+.sectionWordContain .mainWordContain::before{
+  position: absolute;
+  inset: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: #fccf99;
+  animation: wordIntroTranslationEffect 0.75s ease-out forwards;
+  animation-delay: 1s;
+}
+.sectionWordContain .mainWordContain::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  animation: wordIntroTranslationEffect 1s ease-out forwards;
+  animation-delay: 1s;
+  // animation-delay: 1s;
+}
+
+@keyframes wordIntroTranslation {
+  0%{
+    translate: 150% 0%;
+  }
+  100%{
+    translate: 0% 0%;
+  }
+}
+@keyframes wordIntroTranslationEffect {
+  0%{
+    translate: 51% 1%;
+  }
+  100%{
+    translate: -101% 1%;
+  }
+}
