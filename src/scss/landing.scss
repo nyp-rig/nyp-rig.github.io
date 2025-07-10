@@ -77,6 +77,10 @@ html.is-fully-ready *, html.is-fully-ready *::before, html.is-fully-ready *::aft
     scale: 0;
     rotate: 0deg;
   }
+  60%{
+    opacity: 1;
+    scale: 1;
+  }
   100%{
     opacity: 1;
     scale: 1;
