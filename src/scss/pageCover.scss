@@ -9,8 +9,9 @@
   background-position: center;
   padding: 0;
   padding-top: $navbar-brand-height + $navbar-padding-y*2 + $navbar-brand-padding-y*2;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+  contain: paint;
+  // scroll-snap-align: start;
+  // scroll-snap-stop: always;
 }
 
 .sectionMedia{
@@ -22,18 +23,29 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  animation: mediaIntroKeyframe 1s forwards;
+  user-select: none;
+  // animation: mediaIntroKeyframe 1s forwards;
 }
-@keyframes mediaIntroKeyframe {
-  0%{
-    opacity: 0;
-    scale: 1.5;
-  }
-  100%{
-    opacity: 1;
-    scale: 1;
-  }
+.section > .sectionMedia{
+  opacity: 0;
+  scale: 1.5;
+  transition: all 1s;
 }
+.section.is-in-view > .sectionMedia{
+  opacity: 1;
+  scale: 1;
+  transition: all 1s;
+}
+// @keyframes mediaIntroKeyframe {
+//   0%{
+//     opacity: 0;
+//     scale: 1.5;
+//   }
+//   100%{
+//     opacity: 1;
+//     scale: 1;
+//   }
+// }
 
 .sectionWordContain{
   position: absolute;
@@ -43,50 +55,58 @@
   overflow: hidden;
 }
 
-.sectionWordContain .mainWordContain{
+.section .sectionWordContain .mainWordContain{
   position: relative;
   background-color: black;
-  padding: 0.5em;
-  translate: 100% -100%;
-  animation: wordIntroTranslation 1s ease-out forwards;
-  // animation-delay: 1s;
+  padding: 0.5rem;
+  translate: 150% 0%;
+  transition: translate 1s ease-out;
+  // animation: wordIntroTranslation 1s ease-out forwards;
+}
+.section.is-in-view .sectionWordContain .mainWordContain{
+  translate: 0% 0%;
 }
 
-.sectionWordContain .mainWordContain::before{
+.section .sectionWordContain .mainWordContain::before{
   position: absolute;
   inset: 0;
   content: "";
   width: 100%;
   height: 120%;
   background-color: map.get($theme-colors, "primary");
-  animation: wordIntroTranslationEffect 0.75s ease-out forwards;
-  // animation-delay: 1s;
+  translate: 50% 0%;
+  transition: translate 0.75s ease-out;
+  // animation: wordIntroTranslationEffect 0.75s ease-out forwards;
 }
-.sectionWordContain .mainWordContain::after{
+.section .sectionWordContain .mainWordContain::after{
   content: "";
   position: absolute;
   inset: 0;
   width: 100%;
   height: 120%;
   background-color: white;
-  animation: wordIntroTranslationEffect 1s ease-out forwards;
-  // animation-delay: 1s;
-  // animation-delay: 1s;
+  translate: 50% 0%;
+  transition: translate 1s ease-out;
+  // animation: wordIntroTranslationEffect 1s ease-out forwards;
+}
+.section.is-in-view .sectionWordContain .mainWordContain::before, .section.is-in-view .sectionWordContain .mainWordContain::after{
+  translate: -100% 0%;
 }
 
-@keyframes wordIntroTranslation {
-  0%{
-    translate: 150% 0%;
-  }
-  100%{
-    translate: 0% 0%;
-  }
-}
-@keyframes wordIntroTranslationEffect {
-  0%{
-    translate: 50% 0%;
-  }
-  100%{
-    translate: -100% 0%;
-  }
-}
+// @keyframes wordIntroTranslation {
+//   0%{
+//     translate: 150% 0%;
+//   }
+//   100%{
+//     translate: 0% 0%;
+//   }
+// }
+
+// @keyframes wordIntroTranslationEffect {
+//   0%{
+//     translate: 50% 0%;
+//   }
+//   100%{
+//     translate: -100% 0%;
+//   }
+// }
