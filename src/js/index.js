@@ -1,6 +1,7 @@
 // Import all plugins
-import * as bootstrap from 'bootstrap';
-import $, { event } from 'jquery';
+import * as _ from 'bootstrap';
+import $ from 'jquery';
+import initCarousel from './carousel';
 
 
 function pageStartupCompleted(){
@@ -22,7 +23,7 @@ function pageStartupCompleted(){
   });
   $('.section.special').each((_, elm)=>{
     observer2.observe(elm)
-  })
+  });
 }
 
 
@@ -53,5 +54,9 @@ $(() => {
       return;
     }
     elm.html(`<span class="spinner-border spinner-border-sm" aria-hidden="true"></span>`)
-  });   
+  });
+
+  if (document.getElementById('main-carousel-contain')){
+    initCarousel();
+  }
 });
