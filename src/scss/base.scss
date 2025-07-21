@@ -44,13 +44,17 @@ $theme-colors: (
   --bs-bg-opacity: 0.5;
   backdrop-filter: blur(3px);
 }
+.nav-link{
+  user-select: none;
+}
 
 
 #rootContainer{
   height: 100dvh;
   width: 100dvw;
   overflow: auto;//y-axis scrollbar may not be able to overlay
-  scroll-snap-type: y mandatory;
+  // scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
   display: flex;
   flex-direction: column;
 }
