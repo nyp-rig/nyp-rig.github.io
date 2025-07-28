@@ -92,21 +92,7 @@
 .section.is-in-view .sectionWordContain .mainWordContain::before, .section.is-in-view .sectionWordContain .mainWordContain::after{
   translate: -100% 0%;
 }
-.arrow {
-  position: absolute;
-  top: 90%;
-  left: 95%;
-  transform: translateY(-50%) rotate(-50deg);
-  margin-left: 0px;
-  font-size: 30px;
-  animation: bounce 1s ease-in-out infinite;
-  color: #007bff;
-}
 
-@keyframes bounce {
-  0%, 100% { transform: translateY(-50%) rotate(-50deg); }
-  50%      { transform: translateY(-70%) rotate(-50deg); }
-}
 
 // @keyframes wordIntroTranslation {
 //   0%{

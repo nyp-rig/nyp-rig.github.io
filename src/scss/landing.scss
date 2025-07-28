@@ -460,3 +460,31 @@ html.is-fully-ready *, html.is-fully-ready *::before, html.is-fully-ready *::aft
     pointer-events: none;
   }
 }
+
+.down-arrow-container{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  right: 0;
+  bottom: 0.5rem;
+  // justify-content: center;
+  align-items: center;
+}
+
+.down-arrow-container p{
+  margin-bottom: 0;  
+  
+}
+
+.down-arrow-container .down-arrow{
+  user-select: none;
+  font-size: 2rem;
+  animation: bounce-arrow 1s ease-in-out infinite;
+
+}
+
+@keyframes bounce-arrow {
+  0%, 100% { transform: translateY(0%); }
+  50%      { transform: translateY(20%); }
+}
