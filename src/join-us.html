@@ -78,9 +78,12 @@
           <label class="form-check-label">Year 3</label>
         </div>
       </div>
-
       <div class="mb-3">  
-        <label class="form-label">Class (e.g. S1-1):</label>
+        <label class="form-label">Enter current school in NYP</label>
+        <input class="form-control" name="entry.725278553" required>
+      </div>
+      <div class="mb-3">  
+        <label class="form-label">Class (e.g. IT-2504):</label>
         <input class="form-control" type="text" name="entry.897263461" required>
       </div>
         
@@ -88,6 +91,15 @@
         <label class="form-label">Reasons for Joining:</label>
         <textarea class="form-control" name="entry.1365629489" rows="4" cols="50" required></textarea>
       </div>
+      <label>
+        <input type="checkbox" name="attendance_all" value="yes">
+        I am able to attend all CCA sessions
+      </label><br><br>
+
+      <label>
+        <input type="checkbox" name="agree_rules" value="yes" required>
+        I agree to follow the Robotics CCA rules and guidelines
+      </label><br><br>
 
       <button class="btn btn-success has-loading-aft-click" type="submit">Submit</button>
     </form>
