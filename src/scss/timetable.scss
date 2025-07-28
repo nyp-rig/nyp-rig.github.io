@@ -1,0 +1,23 @@
+@import "./pageCover.scss";
+.section.timetableContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.section.timetableContainer .box{
+  opacity: 0;
+  padding: 2rem;
+  border-radius: 1em;
+  width: 60vw;
+  min-width: 300px;
+  background-color: rgba($dark, 0.75);
+  backdrop-filter: blur(2px);
+  z-index: 1;
+  text-align: center;
+  transition: opacity 1s;
+}
+.section.timetableContainer.is-in-view .box{
+  opacity: 1;
+}

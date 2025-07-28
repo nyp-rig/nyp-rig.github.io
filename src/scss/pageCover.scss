@@ -3,12 +3,14 @@
 
 .section{
   position: relative;
-  min-height: 100dvh;
+  // min-height: 100dvh;
+  flex-basis: 100dvh;
+  flex-shrink: 0;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   padding: 0;
-  padding-top: $navbar-brand-height + $navbar-padding-y*2 + $navbar-brand-padding-y*2;
+  padding: ($navbar-brand-height + $navbar-padding-y*2 + $navbar-brand-padding-y*2) 0;
   contain: paint;
   // scroll-snap-align: start;
   // scroll-snap-stop: always;
@@ -26,12 +28,25 @@
   user-select: none;
   // animation: mediaIntroKeyframe 1s forwards;
 }
-.section > .sectionMedia{
+.section .sectionMediaContain{
+  position: absolute;
+  inset: 0;
+}
+.section .sectionMediaContain .sectionMedia{
+  position: sticky;
+  transform: none;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  width: 100%;
+}
+
+.section > .sectionMedia, .section > .sectionMediaContain > .sectionMedia{
   opacity: 0;
   scale: 1.5;
   transition: all 1s;
 }
-.section.is-in-view > .sectionMedia{
+.section.is-in-view > .sectionMedia, .section.is-in-view > .sectionMediaContain > .sectionMedia{
   opacity: 1;
   scale: 1;
   transition: all 1s;
@@ -93,6 +108,56 @@
   translate: -100% 0%;
 }
 
+
+.section .cardsContainer{
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.section .cardsContainer .card{
+  min-width: 250px;
+  flex: 1;
+  padding: 0.5rem;
+  justify-content: center;
+  border-radius: 2rem;
+}
+.section .cardsContainer .card .icon{
+  font-size: 4rem;
+  user-select: none;
+  padding: 0.5rem;
+}
+
+.down-arrow-container{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  right: 0;
+  bottom: 0.5rem;
+  // justify-content: center;
+  align-items: center;
+}
+
+.down-arrow-container p{
+  margin-bottom: 0;  
+  
+}
+
+.down-arrow-container .down-arrow{
+  user-select: none;
+  font-size: 2rem;
+  animation: bounce-arrow 1s ease-in-out infinite;
+
+}
+
+@keyframes bounce-arrow {
+  0%, 100% { transform: translateY(0%); }
+  50%      { transform: translateY(20%); }
+}
 
 // @keyframes wordIntroTranslation {
 //   0%{
