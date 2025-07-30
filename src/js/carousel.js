@@ -145,6 +145,7 @@ export default function initCarousel(){
       if (currentCard) {
         currentCard.classList.toggle("flipped");
       }
+      e.preventDefault();
     }
   }
 

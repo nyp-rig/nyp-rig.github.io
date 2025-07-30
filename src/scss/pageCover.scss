@@ -12,6 +12,7 @@
   padding: 0;
   padding: ($navbar-brand-height + $navbar-padding-y*2 + $navbar-brand-padding-y*2) 0;
   contain: paint;
+  transition: flex-basis 0.25s;
   // scroll-snap-align: start;
   // scroll-snap-stop: always;
 }
@@ -38,6 +39,7 @@
   top: 0;
   left: 0;
   height: 100dvh;
+  transition: height 0.25s;
   width: 100%;
 }
 
@@ -105,41 +107,25 @@
   // animation: wordIntroTranslationEffect 1s ease-out forwards;
 }
 .section.is-in-view .sectionWordContain .mainWordContain::before, .section.is-in-view .sectionWordContain .mainWordContain::after{
-  translate: -100% 0%;
+  translate: -101% 0%;
 }
 
 
-.section .cardsContainer{
-  margin-top: 1rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-.section .cardsContainer .card{
-  min-width: 250px;
-  flex: 1;
-  padding: 0.5rem;
-  justify-content: center;
-  border-radius: 2rem;
-}
-.section .cardsContainer .card .icon{
-  font-size: 4rem;
-  user-select: none;
-  padding: 0.5rem;
-}
-
-.down-arrow-container{
+.section > .down-arrow-container{
   position: absolute;
   display: flex;
   flex-direction: column;
   left: 0;
   right: 0;
   bottom: 0.5rem;
-  // justify-content: center;
   align-items: center;
+  opacity: 0;
+  transition: 0.5s ease-out;
+}
+
+.section.is-in-view > .down-arrow-container{
+  transition-delay: 1s;
+  opacity: 1;
 }
 
 .down-arrow-container p{
@@ -159,20 +145,99 @@
   50%      { transform: translateY(20%); }
 }
 
-// @keyframes wordIntroTranslation {
-//   0%{
-//     translate: 150% 0%;
-//   }
-//   100%{
-//     translate: 0% 0%;
-//   }
-// }
+.benefits-contain{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.benefits-contain .box-contain{
+  position: relative;
+}
+.benefits-contain .box-contain .box{
+  opacity: 0;
+  background-color: black;
+  color: white;
+  transition: opacity 0.25s linear;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  width: 60vw;
+  min-width: 250px;
+  text-align: center;
+}
+.benefits-contain .box-contain::after{
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  margin: auto;
+  opacity: 0;
+  background-color: white;
+  content: "";
+  pointer-events: none;
+}
+.benefits-contain.section.is-in-view .box-contain::after{
+  animation: boxIntroAnim 0.5s linear forwards;
+}
+.benefits-contain.section.is-in-view .box-contain .box{
+  transition-delay: 0.25s;
+  opacity: 1;
+}
+.benefits-contain.section.is-in-view .box-contain .box h3, .benefits-contain.section.is-in-view .box-contain .box p{
+  margin-bottom: 0;
+}
+.benefits-contain.section.is-in-view .box-contain .box .btn{
+  margin-bottom: 0.5rem;
+  translate: 0% 0%;
+  transition: translate 0.2s;
+}
+.benefits-contain.section.is-in-view .box-contain .box .btn:hover{
+  translate: 0% -10%;
+}
+@keyframes boxIntroAnim {
+  0%{
+    opacity: 0;
+    width: 0%;
+  }
+  10%{
+    opacity: 1;
+  }
+  // 33%{
+  //   opacity: 1;
+  // }
+  66%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+    width: 100%;
+  }
+}
 
-// @keyframes wordIntroTranslationEffect {
-//   0%{
-//     translate: 50% 0%;
-//   }
-//   100%{
-//     translate: -100% 0%;
-//   }
-// }
+
+.section .cardsContainer{
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.section .cardsContainer .card{
+  min-width: 200px;
+  flex: 1;
+  padding: 0.5rem;
+  justify-content: center;
+  // background-color: map.get($theme-colors, "danger");
+  // color: white;
+  border: none;
+  background: none;
+}
+.section .cardsContainer .card .icon{
+  font-size: 4rem;
+  user-select: none;
+  padding: 0.5rem;
+}

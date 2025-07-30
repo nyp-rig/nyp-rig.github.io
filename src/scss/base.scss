@@ -47,6 +47,15 @@ $theme-colors: (
 .nav-link{
   user-select: none;
 }
+.dropdown-menu{
+  background-color: rgba(var(--bs-tertiary-bg-rgb), var(--bs-bg-opacity)) !important;
+  top: calc(100% + var(--bs-navbar-padding-y))!important;
+  margin-top: 0;
+  margin-bottom: var(--bs-navbar-padding-y);
+}
+.dropdown-menu .dropdown-item{
+  transition: background-color 0.5s;
+}
 
 
 #rootContainer{
@@ -54,6 +63,7 @@ $theme-colors: (
   width: 100dvw;
   overflow: auto;//y-axis scrollbar may not be able to overlay
   // scroll-snap-type: y mandatory;
+  // scroll-snap-type: y proximity;
   scroll-behavior: smooth;
   display: flex;
   flex-direction: column;
