@@ -21,3 +21,14 @@
 .section.timetableContainer.is-in-view .box{
   opacity: 1;
 }
+
+// .timetableContainer {
+//   padding: 2rem;
+//   font-family: 'Share Tech Mono', monospace;
+// }
+
+/* Optional: Smooth fade-in */
+#moreWeeks {
+  transition: all 0.5s ease-in-out;
+}
+

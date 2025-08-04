@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=keyboard_double_arrow_down" />
   <title>NYP ROBOTICS INTEREST GROUP</title>
   <link rel="stylesheet" href="./scss/timetable.scss"></style>
+  <link rel="stylesheet" href="./scss/pageCover.scss">
 </head>
 <body>
   <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
@@ -55,46 +56,165 @@
         <h3>Robotics Timetable</h3>
 
 
-
-
-        <table class="table">
+        <div id="calendarContainer">
+        <table class="table table-hover table-bordered table-dark align-middle text-center">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
+              <th scope="col">Dates</th>
+              <th scope="col">Themes</th>
+              <th scope="col">Events</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>John</td>
-              <td>Doe</td>
-              <td>@social</td>
-            </tr>
+              <th scope="row">8th August (Friday)</th>
+              <td>Learning Basics of Microbit</td>
+              <td>
+                Our Robotics CCA team will be exploring the basics of Micro:bit radio communication, focusing on how to create simple transmitter and receiver systems using code.
+                All taught by our professional coach ...
+  
+                During this session, members will:
+                
+                Learn how to use Micro:bit's radio feature to send and receive signals wirelessly.
+                
+                Program one Micro:bit as a transmitter and another as a receiver.
+                
+                Implement actions such as:
+                
+                Pressing Button A to transmit one icon (e.g., a smiley face).
+                
+                Pressing Button B to transmit a different icon (e.g., a heart).
+                
+                Tilting the Micro:bit to trigger and send a third icon.
+              </td>
+            </td>
+          </tr>
+          <tbody id="timetableBody">
+          <tr>
+            <th scope="row">15th August (Friday)</th>
+            <td>Learn to assemble the robot car and program it to be controlled with a Micro:bit.
+            </td>
+            <td>Our Robotics CCA will be hosting a hands-on session where members will work in teams to design, build, and program their own remote-controlled cars using the Maqueen Pro robot car kits.
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">22th August (Friday)</th>
+            <td>🔹 1. Pick & Place Challenge
+            </td>
+            <td>
+            Equipments: Use the robotic arm or gripper to 
+            Task: Pick up objects (like bottle caps or blocks) and place them in a target zone.
+            
+            Servo motor control with Micro:bit
+            
+            Precision timing and position sensing
+            </td>
+
+          </tr>
+          <tr>
+            <th scope="row">29th August</th>
+            
+            <td>🔹 2. Warehouse Delivery Simulation
+            </td>
+            <td>
+              Build: Use the forklift or container holder
+              Task: Navigate a track to pick up and deliver "packages" to assigned drop zones.
+              🎯 Learn about:
+              
+              Automation + driving control
+              
+              Task-based sequencing (go > pick > deliver > return)
+            </td>
+          </tr>
           </tbody>
-        </table>
+          <tr>
+            <th scope="row">5th September</th>
+            <td>Smart Navigation Using IR Sensors
+            </td>
+            <td>
+              Learn how IR sensors detect black lines on white surfaces
 
+              Program the Maqueen Pro to follow a line track
+              
+              Adjust PID (proportional-integral-derivative) logic for smoother navigation
+              
+              Compete in a "race track" line-following challenge
+            </td>
+          </tr>
+          <tbody id="moreWeeks" style="display: none;">
+          <tr>
+            <th scope="row">12th September (Friday)</th>
+            <td>🔹 3. Sumo Bot - Push Blade Edition
+            </td>
+            <td>
+              Build: Attach the pusher blade
+              Task: Compete to push opponents out of the ring.
+              🎯 Learn about:
+              
+              Power control
+              
+              Strategic design and defensive mechanics
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">19th September (Friday)</th>
+            <td>
+              🔹 4. Disaster Rescue Simulation
+            </td>
+            <td>
+              Build: Use a gripper or claw
+              Task: Pick up "injured persons" (soft objects) and transport them to safety zones
+              🎯 Learn about:
+              
+              Robotics in real-world disaster scenarios
+              
+              Controlled movement + object interaction
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">26th September (Friday)
+            </th>
+            <td>🚦 Smart Car with Traffic Light Detection using AI Lens Kit
+            </td>
+            <td>
+              Project Goal
+              Program your robot to use the AI Smart Lens to see traffic lights, recognize the color, and decide whether to stop or move — just like a real self-driving car!
+            </td>
+          </tr>
+          <tr>
+            <th scope="row">3rd October (Friday)</th>
+            <td>Robotics Club Creative Open House</td>
+            <td>
+              Members choose their own mini project or combine everything they've learned
+              Ideas:
+              
+              1. A robot pet that reacts to touch/sound
+              
+              2. A delivery robot with obstacle avoidance
+              
+              3. A musical car that plays a tone when moving
+              
+              4. Showcase and short presentations by each team
 
-
-
-
+              5. A cleaning robot with obstacle avoidance and a touch navigation menu for users to navigate around NYP would help NYP keep the school clean.
+            </td>
+          </tr>
+        </tbody>
+      </tbody>
+      
+      <!-- Show More Button -->
+      <div class="position-fixed bottom-0 start-50 translate-middle-x mb-3">
+        <div class="d-flex gap-2 justify-content-center">
+          <button id="showMoreBtn" class="btn btn-outline-light btn-sm">Show More</button>
+          <button id="hideMoreBtn" class="btn btn-danger btn-sm" style="display: none;">Hide</button>
+        </div>
+      </div>  
+</div>
       </div>
     </div>
   </div>
   <script src="./js/index.js" type="module"></script>
+  <script src="./js/timetable.js" type="module"></script>
+  
 </body>
 </html>
