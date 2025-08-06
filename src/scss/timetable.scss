@@ -4,6 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: $navbar-brand-height + $navbar-padding-y*2 + $navbar-brand-padding-y*2 + 0.5rem;
 }
 
 .section.timetableContainer .box{
@@ -22,13 +23,15 @@
   opacity: 1;
 }
 
-// .timetableContainer {
-//   padding: 2rem;
-//   font-family: 'Share Tech Mono', monospace;
-// }
-
 /* Optional: Smooth fade-in */
 #moreWeeks {
   transition: all 0.5s ease-in-out;
 }
 
+li{
+  list-style-position: inside;
+}
+
+td:nth-child(3){//Third Column
+  text-align: left;
+}

@@ -4,20 +4,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- LOAD CUSTOM FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet">
+  
+  <!-- LOAD ICONS -->
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=diversity_1,extension,keyboard_double_arrow_down,rocket_launch" />
-  <title>NYP ROBOTICS INTEREST GROUP</title>
-  <link rel="stylesheet" href="./scss/base.scss">
-  </style>
-  <link rel="stylesheet" href="./scss/landing.scss">
-  </style>
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=diversity_1,extension,keyboard_double_arrow_down,rocket_launch">
+  
+  <!-- Title & Favicon -->
+  <title>NYP Robotics Interest Group</title>
+  <link rel="icon" href="./assets/images/favicon.png">
 
+  
+  <!-- LOAD STYLES CONTAINING BOOTSTRAP -->
+  <link rel="stylesheet" href="./scss/base.scss">
+  <link rel="stylesheet" href="./scss/landing.scss">
+
+  <!-- PRERENDER OR PREFETCH PAGES IN CHROME FOR INSTANT PAGE NAVIGATIONS -->
+  <!-- SEE https://developer.chrome.com/docs/web-platform/prerender-pages for more info -->
+  <script type="speculationrules">
+    {
+      "prerender": [
+        {
+          "urls": ["./building", "./programming", "./join-us", "./timetable"]
+        }
+      ]
+    }
+  </script>
 </head>
 
 <body>
+  <!-- LOGO REVEAL INTRO SCREEN -->
   <div class="introScreen" id="introScreen">
     <div class="logoIntro">
       <!-- This is the settings icon from Google Material Design Icons -->
@@ -32,10 +52,16 @@
     </div>
   </div>
   <script>
+    // This script is inline so that it runs before the rest of the document loads.
+    // This script removes the introScreen if the user already saw it when browsing through the site.
     if (document.referrer && document.referrer.startsWith(window.location.origin)) {
       document.getElementById('introScreen').remove();
     }
   </script>
+  <!-- END OF LOGO REVEAL INTRO SCREEN -->
+
+
+  <!-- START NAVIGATION BAR -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">NYP RIG</a>
@@ -74,8 +100,13 @@
       </div>
     </div>
   </nav>
+  <!-- END OF NAVIGATION BAR -->
+
+  <!-- START OF ROOT CONTAINER -->
   <div id="rootContainer">
+    <!-- START OF PAGE COVER -->
     <div class="section">
+      <!-- BACKGROUND IMAGE AS ELEMENT INSTEAD OF CSS `background-image` FOR SPECIAL CSS ANIMATIONS -->
       <img class="sectionMedia" src="./assets/images/bg.png"></img>
       <div class="sectionWordContain">
         <div class="mainWordContain">
@@ -88,9 +119,11 @@
         <span class="material-symbols-outlined down-arrow">keyboard_double_arrow_down</span>
       </div>
     </div>
+    <!-- END OF PAGE COVER -->
 
-
+    <!-- START OF PAGE SPECIAL SECTION -->
     <div class="section special">
+      <!-- START OF SPECIAL ANIMATION ELEMENTS -->
       <div class="specialIntroContain">
         <div class="specialIntroBG">
           <div class="bgBar"></div>
@@ -111,25 +144,17 @@
           </div>
         </div>
       </div>
+      <!-- END OF SPECIAL ANIMATION ELEMENTS -->
+
+      <!-- SPECIAL SECTION MAIN CONTENT -->
       <div class="subSectionContain">
         <img class="sectionMedia" src="./assets/images/buildingBg.jpg"></img>
         <div class="sectionWordContain is-left">
           <h1>Building</h1>
-          <h3>Build amazing robots with us!<br>
-            🔧 Skill & Tech Focus
-            Learn coding, engineering, and teamwork.
-            Master VEX, Arduino, and Microbit.
-            Design. Build. Program. Compete.<br>
-
-            🤝 Community & Vibes
-            Collaborate with passionate builders like you.
-            From beginners to pros — everyone's welcome.
-            Find your team. Find your spark.<br>
-
-            🚀 Competitions & Achievements
-            Join national competitions like VEX Robotics.
-            Showcase your bots in real-world challenges.
-            Push boundaries in every build.
+          <h3>Ready to push the boundaries of innovations? Join us and build some amazing robots with us!
+            Here you can master VEX, Arduino, Microbit, and learn common contraptions like a scissor lift, pneumatics
+            systems and electrical engineering.
+            From beginners to pros, everyone's welcome.
           </h3>
           <a class="btn btn-info has-loading-aft-click btn-lg" href="./building">Learn More</a>
         </div>
@@ -138,19 +163,20 @@
         <img class="sectionMedia" src="./assets/images/programmingBg.png"></img>
         <div class="sectionWordContain">
           <h1>Programming</h1>
-          <h3>Microsoft MakeCode
-            Used for: Programming Micro:bit with blocks or JavaScript
-            Beginner-friendly: Visual interface, great for schools <br>
-            MicroPython (Mu Editor / Thonny / Online Editors)
-            Used for: Advanced programming of Micro:bit in Python
-            Good for: Learning real syntax in a simple environment
+          <h3>Be part of the ever-evloving society of programmers who are constantly pushing the hardware limits of our
+            robots.
+            Learn complex theories like odometry and autonomous programming through the use of Python, JavaScript and
+            C++.
+            We also offer block programming for beginners.
           </h3>
           <a class="btn btn-info has-loading-aft-click btn-lg" href="./programming">Learn More</a>
         </div>
       </div>
     </div>
+    <!-- END OF PAGE SPECIAL SECTION -->
 
 
+    <!-- START OF NEXT SECION -->
     <div class="section benefits-contain">
       <div class="sectionMediaContain">
         <img class="sectionMedia" src="./assets/images/bg.png"></img>
@@ -183,7 +209,13 @@
         </div>
       </div>
     </div>
+    <!-- END OF NEXT SECION -->
+
+
   </div>
+  <!-- END OF ROOT CONTAINER -->
+
+  <!-- MAIN JS FILE TO HANDLE ANIMATIONS WHEN USERS SCROLL -->
   <script src="./js/index.js" type="module"></script>
 </body>
 

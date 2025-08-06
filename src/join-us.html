@@ -4,15 +4,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- LOAD CUSTOM FONTS -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-  <title>NYP ROBOTICS INTEREST GROUP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Share+Tech+Mono&display=swap"
+    rel="stylesheet">
+
+  <!-- Title & Favicon -->
+  <title>NYP Robotics Interest Group &#x2013 Join Us</title>
+  <link rel="icon" href="./assets/images/favicon.png">
+
+  <!-- LOAD STYLES CONTAINING BOOTSTRAP -->
   <link rel="stylesheet" href="./scss/join-us.scss">
-  </style>
+
+  <!-- PRERENDER OR PREFETCH PAGES IN CHROME FOR INSTANT PAGE NAVIGATIONS -->
+  <!-- SEE https://developer.chrome.com/docs/web-platform/prerender-pages for more info -->
+  <script type="speculationrules">
+    {
+      "prerender": [
+        {
+          "urls": ["./building", "./programming", "./", "./timetable"]
+        }
+      ]
+    }
+  </script>
 </head>
 
 <body>
+  <!-- LOGO REVEAL INTRO SCREEN -->
+  <div class="introScreen" id="introScreen">
+    <div class="logoIntro">
+      <!-- This is the settings icon from Google Material Design Icons -->
+      <svg class="gearLogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" fill="#EA3323">
+        <path
+          d="m370-80-16-128q-13-5-24.5-12T307-235l-119 50L78-375l103-78q-1-7-1-13.5v-27q0-6.5 1-13.5L78-585l110-190 119 50q11-8 23-15t24-12l16-128h220l16 128q13 5 24.5 12t22.5 15l119-50 110 190-103 78q1 7 1 13.5v27q0 6.5-2 13.5l103 78-110 190-118-50q-11 8-23 15t-24 12L590-80H370Zm70-80h79l14-106q31-8 57.5-23.5T639-327l99 41 39-68-86-65q5-14 7-29.5t2-31.5q0-16-2-31.5t-7-29.5l86-65-39-68-99 42q-22-23-48.5-38.5T533-694l-13-106h-79l-14 106q-31 8-57.5 23.5T321-633l-99-41-39 68 86 64q-5 15-7 30t-2 32q0 16 2 31t7 30l-86 65 39 68 99-42q22 23 48.5 38.5T427-266l13 106Zm42-180q58 0 99-41t41-99q0-58-41-99t-99-41q-59 0-99.5 41T342-480q0 58 40.5 99t99.5 41Zm-2-140Z" />
+      </svg>
+      <div class="textContain">
+        <h1>NYP</h1>
+        <h2>Robotics</h2>
+      </div>
+    </div>
+  </div>
+  <script>
+    // This script is inline so that it runs before the rest of the document loads.
+    // This script removes the introScreen if the user already saw it when browsing through the site.
+    if (document.referrer && document.referrer.startsWith(window.location.origin)) {
+      document.getElementById('introScreen').remove();
+    }
+  </script>
+  <!-- END OF LOGO REVEAL INTRO SCREEN -->
+
+
+  <!-- START NAVIGATION BAR -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
     <div class="container-fluid">
       <a class="navbar-brand" href="/">NYP RIG</a>
@@ -34,6 +77,14 @@
           <!-- <li class="nav-item">
             <a class="nav-link" href="#">Our Team</a>
           </li> -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Others
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="./timetable">Timetable</a></li>
+            </ul>
+          </li>
         </ul>
         <div class="join-us-nav-btn-contain">
           <a class="btn btn-primary has-loading-aft-click" href="/join-us">Join Us</a>
@@ -41,70 +92,95 @@
       </div>
     </div>
   </nav>
+  <!-- END OF NAVIGATION BAR -->
+
+  <!-- START OF MAIN CONTENT -->
   <div class="join-us-special-contain">
-    <form class="join-us-box shadow-lg"
+    <form id="joinForm" class="join-us-box shadow-lg"
       action="https://docs.google.com/forms/d/e/1FAIpQLSfsMr1gZWeCYxm56wmyequeWXvSGnZL1knWkdR3IWcYGVo6Ag/formResponse"
-      method="POST" target="_self">
+      method="POST" target="_self" novalidate>
       <div class="mb-3 text-center">
         <h3>Join Us!</h3>
         <h5>Become a member of NYP's Robotics Interest Group!</h5>
       </div>
       <div class="mb-3">
-        <label class="form-label">Email:</label>
-        <input class="form-control" type="email" name="emailAddress" placeholder="Enter your NYP email address here" required>
+        <label class="form-label" for="email-input">NYP Email:</label>
+        <input class="form-control" type="email" name="emailAddress" placeholder="E.g. 123456Y@mymail.nyp.edu.sg"
+          id="email-input" autofocus required>
+        <div class="invalid-feedback">Please enter a valid NYP email.</div>
       </div>
 
       <div class="mb-3">
         <label class="form-label">Full Name:</label>
-        <input class="form-control" type="text" name="entry.851075444" required>
+        <input class="form-control" type="text" name="entry.851075444" placeholder="E.g. John Doe" required>
+        <div class="invalid-feedback">Please enter your full name.</div>
       </div>
-        
-      <div class="mb-3">  
+
+      <div class="mb-3">
         <label class="form-label">Year:</label>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="entry.207949549" value="PFP" required>
-          <label class="form-check-label">PFP</label>
+          <input class="form-check-input" type="radio" name="entry.207949549" id="entry.20794954-PFP" value="PFP" required>
+          <label class="form-check-label" for="entry.20794954-PFP">PFP</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="entry.207949549" value="Year 1" required>
-          <label class="form-check-label">Year 1</label>
+          <input class="form-check-input" type="radio" name="entry.207949549" id="entry.207949549-YEAR-1" value="Year 1" required>
+          <label class="form-check-label" for="entry.207949549-YEAR-1">Year 1</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="entry.207949549" value="Year 2" required>
-          <label class="form-check-label">Year 2</label>
+          <input class="form-check-input" type="radio" name="entry.207949549" id="entry.207949549-YEAR-2" value="Year 2" required>
+          <label class="form-check-label" for="entry.207949549-YEAR-2">Year 2</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="entry.207949549" value="Year 3" required>
-          <label class="form-check-label">Year 3</label>
+          <input class="form-check-input" type="radio" name="entry.207949549" id="entry.207949549-YEAR-3" value="Year 3" required>
+          <label class="form-check-label" for="entry.207949549-YEAR-3">Year 3</label>
+          <div class="invalid-feedback">Please select a year.</div>
         </div>
       </div>
-      <div class="mb-3">  
-        <label class="form-label">Enter current school in NYP</label>
-        <input class="form-control" name="entry.725278553" required>
+      <div class="mb-3">
+        <label class="form-label">Enter Current School in NYP</label>
+        <select class="form-select" name="entry.725278553" required>
+          <option value="" selected disabled hidden>Select a School</option>
+          <option value="SIT">School of Information Technology</option>
+          <option value="SEG">School of Engineering</option>
+          <option value="SHSS">School of Health & Social Sciences</option>
+          <option value="SDM">School of Design & Media</option>
+          <option value="SBM">School of Buisiness Management</option>
+          <option value="SAS">School of Applied Science</option>
+        </select>
+        <div class="invalid-feedback">Please select a school.</div>
       </div>
-      <div class="mb-3">  
-        <label class="form-label">Class (e.g. IT-2504):</label>
-        <input class="form-control" type="text" name="entry.897263461" required>
+      <div class="mb-3">
+        <label class="form-label">PEM Class:</label>
+        <input class="form-control" type="text" name="entry.897263461" placeholder="E.g. IT-2504" required>
+        <div class="invalid-feedback">Please enter your class</div>
       </div>
-        
+
       <div class="mb-3">
         <label class="form-label">Reasons for Joining:</label>
-        <textarea class="form-control" name="entry.1365629489" rows="4" cols="50" required></textarea>
+        <textarea class="form-control" name="entry.1365629489" rows="4" cols="50" placeholder="Let us know how you got to know us and why you are interested to join." required></textarea>
+        <div class="invalid-feedback">Please tell us why you want to join NYP RIG.</div>
       </div>
       <!-- <label>
         <input type="checkbox" name="attendance_all" value="yes">
         I am able to attend all CCA sessions
-      </label><br><br> -->
-
-      <label>
-        <input type="checkbox" name="agree_rules" value="yes" required>
-        I agree to follow the Robotics CCA rules and guidelines
-      </label><br><br>
+      </label> -->
+      <div class="form-check mb-3">
+        <input class="form-check-input" type="checkbox" name="agree_rules" id="agree_rules" value="yes" required>
+        <label class="form-check-label" for="agree_rules">I agree to follow the Robotics CCA rules and guidelines.</label>
+        <div class="invalid-feedback">Please agree to the Robotics CCA Rules and Guidelines</div>
+      </div>
 
       <button class="btn btn-success has-loading-aft-click" type="submit">Submit</button>
     </form>
   </div>
+  <!-- END OF MAIN CONTENT -->
+
+
+  <!-- MAIN JS FILE TO HANDLE LOADING SIGN BUTTONS -->
   <script src="./js/index.js" type="module"></script>
+
+  <!-- JS FILE TO HANDLE CUSTOM FORM VALIDATION -->
+  <script src="./js/formValidation.js" type="module"></script>
 </body>
 
 </html>

@@ -2,42 +2,11 @@
 @import "./base.scss";
 /* Base Styles */
 :root {
-  // --primary: #9d00ff;
-  // --secondary: #00e5ff;
-  // --accent: map.get($theme-colors, "primary");//#ff00e5;
-  // --background: #050510;
-  // --background: #fff;
-  // --card-bg: rgba(20, 20, 40, 0.7);
-  // --text-primary: #ffffff;
-  // --text-secondary: #b8b8ff;
-  // --glow-primary: 0 0 10px rgba(157, 0, 255, 0.7),
-  //   0 0 20px rgba(157, 0, 255, 0.5);
-  // --glow-secondary: 0 0 10px rgba(0, 229, 255, 0.7),
-  //   0 0 20px rgba(0, 229, 255, 0.5);
-  // --glow-accent: 0 0 10px rgba(map.get($theme-colors, "primary"), 0.7),
-  //   0 0 20px rgba(map.get($theme-colors, "primary");, 0.5);
   --card-width: 300px;
   --card-height: max(50dvh, 320px);
   --carousel-radius: 400px;
   --transition-speed: 0.5s;
 }
-
-// * {
-//   margin: 0;
-//   padding: 0;
-//   box-sizing: border-box;
-// }
-
-// body,
-// html {
-//   height: 100%;
-//   // font-family: "Chakra Petch", sans-serif;
-//   // background-color: var(--background);
-//   // color: #fff;
-//   overflow: hidden; /* Prevent page scrolling */
-//   display: grid;
-//   align-items: center;
-// }
 .carousel-control-prev, .carousel-control-next{
   filter: none;
 }
@@ -46,6 +15,8 @@
   height: 150dvh;
   color: #fff;
 }
+
+
 /* Typography */
 .main-carousel-contain h1,
 .main-carousel-contain h2,
@@ -53,10 +24,10 @@
 .main-carousel-contain h4,
 .main-carousel-contain h5,
 .main-carousel-contain h6 {
-  // font-family: "Orbitron", sans-serif;
   font-weight: 700;
   letter-spacing: 1px;
 }
+
 
 /* Cosmic Background */
 .cosmos-background {
@@ -97,6 +68,7 @@
       600px 600px;
   }
 }
+
 
 /* Carousel Container */
 .carousel-contain-parent{
@@ -174,24 +146,12 @@
 
 .card-front {
   background: $dark;
-  // background: linear-gradient(
-  //   135deg,
-  //   rgba(30, 30, 60, 0.8),
-  //   rgba(20, 20, 40, 0.9)
-  // );
   border: 1px solid rgba(249, 160, 63, 0.3);
-  // background: var(--bs-body-bg);
   transform-style: preserve-3d;
 }
 
 .card-back {
-  // background: linear-gradient(
-  //   135deg,
-  //   rgba(20, 20, 40, 0.9),
-  //   rgba(30, 30, 60, 0.8)
-  // );
   background: $dark;
-  // border: 1px solid rgba(17, 138, 178, 0.3);
   transform: rotateY(180deg);
 }
 
@@ -206,7 +166,7 @@
 }
 
 .memory-date {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Orbitron", "Share Tech Mono", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 0.8rem;
   color: map.get($theme-colors, "primary");
   margin-bottom: 10px;
@@ -222,8 +182,6 @@
 }
 
 .memory-image {
-  // width: 100%;
-  // max-height: 150px;
   margin-bottom: 15px;
   display: flex;
   justify-content: center;
@@ -296,7 +254,7 @@
 }
 
 .memory-coordinates {
-  font-family: "Orbitron", sans-serif;
+  font-family: "Orbitron", "Share Tech Mono", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 0.8rem;
   color: map.get($theme-colors, "info");
   display: flex;

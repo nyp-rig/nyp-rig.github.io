@@ -1,3 +1,4 @@
+@import "./introScreen.scss";
 @view-transition {
   navigation: auto;
 }
@@ -22,7 +23,7 @@ $theme-colors: (
 
 :root{
   color-scheme: only dark;
-  --bs-font-sans-serif: "Share Tech Mono", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --bs-font-sans-serif: "Share Tech Mono", "Orbitron", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .join-us-nav-btn-contain{
@@ -61,7 +62,7 @@ $theme-colors: (
 #rootContainer{
   height: 100dvh;
   width: 100dvw;
-  overflow: auto;//y-axis scrollbar may not be able to overlay
+  overflow-y: auto;
   // scroll-snap-type: y mandatory;
   // scroll-snap-type: y proximity;
   scroll-behavior: smooth;

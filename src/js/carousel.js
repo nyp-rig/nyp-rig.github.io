@@ -94,15 +94,13 @@ export default function initCarousel(){
 
   // Drag functions
   function dragStart(e) {
-    // e.preventDefault(); // Prevent default behavior
     isDragging = true;
     startX = e.pageX || e.touches[0].pageX;
   }
 
   function drag(e) {
     if (!isDragging) return;
-    // e.preventDefault(); // Prevent default scrolling
-
+    
     const currentX = e.pageX || (e.touches ? e.touches[0].pageX : startX);
     const diffX = currentX - startX;
 

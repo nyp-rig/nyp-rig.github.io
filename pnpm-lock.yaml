@@ -18,6 +18,9 @@ importers:
       '@parcel/config-default':
         specifier: ^2.15.4
         version: 2.15.4(@parcel/core@2.15.4(@swc/helpers@0.5.17))(@swc/helpers@0.5.17)
+      '@parcel/transformer-raw':
+        specifier: ^2.15.4
+        version: 2.15.4(@parcel/core@2.15.4(@swc/helpers@0.5.17))
       '@parcel/transformer-sass':
         specifier: 2.15.4
         version: 2.15.4(@parcel/core@2.15.4(@swc/helpers@0.5.17))
