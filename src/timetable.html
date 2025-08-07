@@ -48,8 +48,13 @@
   <script>
     // This script is inline so that it runs before the rest of the document loads.
     // This script removes the introScreen if the user already saw it when browsing through the site.
-    if (document.referrer && document.referrer.startsWith(window.location.origin)) {
+    if (window.location.hash == '#introScreen' || (document.referrer && document.referrer.startsWith(window.location.origin))) {
       document.getElementById('introScreen').remove();
+    }
+    else{
+      if (!(document.referrer && document.referrer.startsWith(window.location.origin))){
+        window.location.hash = '#introScreen'
+      }
     }
   </script>
   <!-- END OF LOGO REVEAL INTRO SCREEN -->

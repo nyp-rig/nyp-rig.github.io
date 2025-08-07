@@ -338,3 +338,32 @@
     height: 350px;
   }
 }
+
+
+
+
+.carousel-instructions{
+  position: absolute;
+  bottom: 1em;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+.carousel-instructions .instruction-page{
+  text-align: center;
+}
+.carousel-instructions .instruction-page .material-symbols-outlined{
+  font-size: 2.5rem;
+  animation: bounceTouchIcon infinite 1s;
+}
+.carousel-instructions.is-dimissed{
+  opacity: 0;
+}
+
+@keyframes bounceTouchIcon {
+  0%, 100%{
+    transform: translateY(-5px);
+  }
+  50%{
+    transform: translateY(0px);
+  }
+}

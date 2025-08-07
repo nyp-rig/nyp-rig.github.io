@@ -12,7 +12,7 @@
   padding: 2rem;
   border-radius: 1em;
   width: 60vw;
-  min-width: 300px;
+  min-width: 350px;
   background-color: rgba($dark, 0.75);
   backdrop-filter: blur(2px);
   z-index: 1;
@@ -34,4 +34,9 @@ li{
 
 td:nth-child(3){//Third Column
   text-align: left;
+}
+
+
+#calendarContainer{
+  overflow-x: auto;
 }

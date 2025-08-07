@@ -90,6 +90,8 @@ export default function initCarousel(){
     if (cardIndex === currentIndex) {
       card.classList.toggle("flipped");
     }
+
+    document.getElementsByClassName('carousel-instructions')[0].classList.add('is-dimissed');
   }
 
   // Drag functions
