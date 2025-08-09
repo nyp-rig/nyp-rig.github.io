@@ -51,8 +51,8 @@
     if (window.location.hash == '#introScreen' || (document.referrer && document.referrer.startsWith(window.location.origin))) {
       document.getElementById('introScreen').remove();
     }
-    else{
-      if (!(document.referrer && document.referrer.startsWith(window.location.origin))){
+    else {
+      if (!(document.referrer && document.referrer.startsWith(window.location.origin))) {
         window.location.hash = '#introScreen'
       }
     }
@@ -116,34 +116,38 @@
       </div>
 
       <div class="mb-3">
-        <label class="form-label">Full Name:</label>
-        <input class="form-control" type="text" name="entry.851075444" placeholder="E.g. John Doe" required>
+        <label class="form-label" for="name-input">Full Name:</label>
+        <input class="form-control" type="text" name="entry.851075444" id="name-input" placeholder="E.g. John Doe" required>
         <div class="invalid-feedback">Please enter your full name.</div>
       </div>
 
       <div class="mb-3">
         <label class="form-label">Year:</label>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="entry.207949549" id="entry.20794954-PFP" value="PFP" required>
+          <input class="form-check-input" type="radio" name="entry.207949549" id="entry.20794954-PFP" value="PFP"
+            required>
           <label class="form-check-label" for="entry.20794954-PFP">PFP</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="entry.207949549" id="entry.207949549-YEAR-1" value="Year 1" required>
+          <input class="form-check-input" type="radio" name="entry.207949549" id="entry.207949549-YEAR-1" value="Year 1"
+            required>
           <label class="form-check-label" for="entry.207949549-YEAR-1">Year 1</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="entry.207949549" id="entry.207949549-YEAR-2" value="Year 2" required>
+          <input class="form-check-input" type="radio" name="entry.207949549" id="entry.207949549-YEAR-2" value="Year 2"
+            required>
           <label class="form-check-label" for="entry.207949549-YEAR-2">Year 2</label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="entry.207949549" id="entry.207949549-YEAR-3" value="Year 3" required>
+          <input class="form-check-input" type="radio" name="entry.207949549" id="entry.207949549-YEAR-3" value="Year 3"
+            required>
           <label class="form-check-label" for="entry.207949549-YEAR-3">Year 3</label>
           <div class="invalid-feedback">Please select a year.</div>
         </div>
       </div>
       <div class="mb-3">
-        <label class="form-label">Enter Current School in NYP</label>
-        <select class="form-select" name="entry.725278553" required>
+        <label class="form-label" for="input-school">Enter Current School in NYP</label>
+        <select class="form-select" name="entry.725278553" id="input-school" required>
           <option value="" selected disabled hidden>Select a School</option>
           <option value="SIT">School of Information Technology</option>
           <option value="SEG">School of Engineering</option>
@@ -155,14 +159,15 @@
         <div class="invalid-feedback">Please select a school.</div>
       </div>
       <div class="mb-3">
-        <label class="form-label">PEM Class:</label>
-        <input class="form-control" type="text" name="entry.897263461" placeholder="E.g. IT-2504" required>
+        <label class="form-label" for="class-input">PEM Class:</label>
+        <input class="form-control" type="text" name="entry.897263461" id="class-input" placeholder="E.g. IT-2504" required>
         <div class="invalid-feedback">Please enter your class</div>
       </div>
 
       <div class="mb-3">
-        <label class="form-label">Reasons for Joining:</label>
-        <textarea class="form-control" name="entry.1365629489" rows="4" cols="50" placeholder="Let us know how you got to know us and why you are interested to join." required></textarea>
+        <label class="form-label" for="reason-input">Reasons for Joining:</label>
+        <textarea class="form-control" name="entry.1365629489" id="reason-input" rows="4" cols="50"
+          placeholder="Let us know how you got to know us and why you are interested to join." required></textarea>
         <div class="invalid-feedback">Please tell us why you want to join NYP RIG.</div>
       </div>
       <!-- <label>
@@ -171,12 +176,69 @@
       </label> -->
       <div class="form-check mb-3">
         <input class="form-check-input" type="checkbox" name="agree_rules" id="agree_rules" value="yes" required>
-        <label class="form-check-label" for="agree_rules">I agree to follow the Robotics CCA rules and guidelines.</label>
+        <label class="form-check-label" for="agree_rules">I agree to follow the Robotics CCA rules and
+          guidelines.</label>
         <div class="invalid-feedback">Please agree to the Robotics CCA Rules and Guidelines</div>
       </div>
 
       <button class="btn btn-success has-loading-aft-click" type="submit">Submit</button>
     </form>
+
+
+    <!-- START OF FORM RESPONSE MODAL -->
+    <div class="modal fade" id="formResponse" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="formResponseLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-3" id="formResponseLabel">Response Submitted!</h1>
+          </div>
+          <div class="modal-body">
+            <p>Thank you for joining us. We will contact you about when the next CCA session is. Look out for this email as it may end up in the spam.</p>
+            <h4>Your Submission:</h4>
+            <div id="FormResponse" class="border p-3 rounded">
+              <div class="mb-3">
+                <label class="form-label" for="email-response">NYP Email:</label>
+                <input class="form-control" type="email" id="email-response" readonly disabled>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="name-response">Full Name:</label>
+                <input class="form-control" type="text" id="name-response" readonly disabled>
+              </div>
+
+              <div class="row">
+                <div class="col mb-3">
+                  <label class="form-label" for="year-response">Year:</label>
+                  <input class="form-control" type="text" id="year-response" readonly disabled>
+                </div>
+                <div class="col mb-3">
+                  <label class="form-label" for="school-response">School (Short Form):</label>
+                  <input class="form-control" type="text" id="school-response" readonly disabled>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label" for="class-response">PEM Class:</label>
+                <input class="form-control" type="email" id="class-response" readonly disabled>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="reason-response">Reasons for Joining:</label>
+                <textarea class="form-control" id="reason-response" rows="4" cols="50" readonly disabled></textarea>
+              </div>
+
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+            <a type="button" class="btn btn-primary" href="/">Back to Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- END OF FORM RESPONSE MODAL -->
+
   </div>
   <!-- END OF MAIN CONTENT -->
 

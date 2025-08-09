@@ -1,6 +1,6 @@
 // Import Bootstrap, Jquery and our Carousel all libraries
-import * as _ from 'bootstrap';
 import $ from 'jquery';
+import * as _ from 'bootstrap';
 import initCarousel from './carousel';
 
 

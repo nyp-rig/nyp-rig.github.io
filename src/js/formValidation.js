@@ -1,11 +1,26 @@
 import $ from 'jquery';
+import { Modal } from 'bootstrap';
+
+// GOOGLE FORM FIELD MAPPINGS to map Google Form fields to response page field IDs
+const formFieldMappings = {
+  'emailAddress': 'email-response',
+  'entry.851075444': 'name-response',
+  'entry.207949549': 'year-response',
+  'entry.725278553': 'school-response',
+  'entry.897263461': 'class-response',
+  'entry.1365629489': 'reason-response'
+}
+
+
 
 // Reset form when back button pressed.
 $(window).on('pageshow', () => {
   $('#joinForm')[0].reset();
 });
 
+// ON DOCUMENT READY
 $(() => {
+  const formResponseModal = new Modal('#formResponse', { keyboard: false });
 
   // Prevent Enter from triggering form submission.
   $('#joinForm').on('keypress', (event) => {
@@ -49,10 +64,34 @@ $(() => {
           break;
         }
       }
-    }
 
-    // Show feedback messages
-    $('#joinForm').addClass('was-validated')
+      // Show feedback messages
+      $('#joinForm').addClass('was-validated')
+    }
+    else {
+      event.preventDefault();
+      // Show feedback messages
+      $('#joinForm').addClass('was-validated');
+      const formData = new FormData($('#joinForm')[0]);
+      fetch('https://docs.google.com/forms/d/e/1FAIpQLSfsMr1gZWeCYxm56wmyequeWXvSGnZL1knWkdR3IWcYGVo6Ag/formResponse', {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'// Since we only want to send data and Google Forms which uses CORS, 
+        // we use `no-cors` so that we can send the data and bypass CORS.
+      }).then(() => {
+        for (const fieldEntry of formData.entries()) {
+          const [fieldName, fieldValue] = fieldEntry;
+          if (formFieldMappings[fieldName]) {
+            $(`#${formFieldMappings[fieldName]}`).val(fieldValue)
+          }
+        }
+        formResponseModal.show();
+      }).catch(() => {
+        alert('An error occured when trying to submit the form. Please try again!');
+        window.location.reload();
+      });
+    }
+    return false;
   });
 
   // Validate Email Input
