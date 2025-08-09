@@ -122,14 +122,18 @@
 .down-arrow-container p{
   margin-bottom: 0;  
   font-size: 1.5rem;
-  text-shadow: 2px 2px 6px #000;
+  text-shadow: 
+  -2px -2px 6px #000,
+  2px 2px 6px #000;
 }
 
 .down-arrow-container .down-arrow{
   user-select: none;
   font-size: 3rem;
   margin-top: -0.5rem;
-  text-shadow: 2px 2px 12px #000;
+  text-shadow: 
+  -2px -2px 12px #000,
+  2px 2px 12px #000;
   animation: bounce-arrow 1s ease-in-out infinite;
 
 }

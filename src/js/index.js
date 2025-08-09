@@ -3,8 +3,6 @@ import * as _ from 'bootstrap';
 import $ from 'jquery';
 import initCarousel from './carousel';
 
-// TODO: ALT TEXT FOR IMAGES
-// rearrange images in images folder
 
 
 /**
