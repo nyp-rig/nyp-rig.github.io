@@ -19,7 +19,7 @@
 
   <!-- PRERENDER OR PREFETCH PAGES IN CHROME FOR INSTANT PAGE NAVIGATIONS -->
   <!-- SEE https://developer.chrome.com/docs/web-platform/prerender-pages for more info -->
-  <script type="speculationrules">
+  <!-- <script type="speculationrules">
     {
       "prerender": [
         {
@@ -27,7 +27,7 @@
         }
       ]
     }
-  </script>
+  </script> -->
 </head>
 
 <body>
@@ -79,17 +79,20 @@
           <li class="nav-item">
             <a class="nav-link" href="/programming">Programming</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/events">Events</a>
+          </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="#">Our Team</a>
           </li> -->
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Others
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="./timetable">Timetable</a></li>
             </ul>
-          </li>
+          </li> -->
         </ul>
         <div class="join-us-nav-btn-contain">
           <a class="btn btn-primary has-loading-aft-click" href="/join-us">Join Us</a>
@@ -102,31 +105,38 @@
   <!-- START OF MAIN CONTENT -->
   <div class="join-us-special-contain">
     <form id="joinForm" class="join-us-box shadow-lg"
-      action="https://docs.google.com/forms/d/e/1FAIpQLSfsMr1gZWeCYxm56wmyequeWXvSGnZL1knWkdR3IWcYGVo6Ag/formResponse"
-      method="POST" target="_self" novalidate>
+      action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScijvgVreEVfk9CXr-zwfA7ffKTs8rQWrGrkHsmSa4f6rctyA/formResponse"
+      method="POST" target="_parent" novalidate>
       <div class="mb-3 text-center">
         <h3>Join Us!</h3>
         <h5>Become a member of NYP's Robotics Interest Group!</h5>
       </div>
-      <div class="mb-3">
-        <label class="form-label" for="email-input">NYP Email:</label>
-        <input class="form-control" type="email" name="emailAddress" placeholder="E.g. 123456Y@mymail.nyp.edu.sg"
-          id="email-input" autofocus required>
-        <div class="invalid-feedback">Please enter a valid NYP email.</div>
-      </div>
-
+      
       <div class="mb-3">
         <label class="form-label" for="name-input">Full Name:</label>
         <input class="form-control" type="text" name="entry.851075444" id="name-input" placeholder="E.g. John Doe" required>
         <div class="invalid-feedback">Please enter your full name.</div>
       </div>
-
+      
+      <div class="mb-3">
+        <label class="form-label" for="phone-input">Phone Number:</label>
+        <input class="form-control" type="text" name="entry.1485536765" id="phone-input" placeholder="E.g. +65 1234 5678" required>
+        <div class="invalid-feedback">Please enter a valid phone number.</div>
+      </div>
+      
+      <div class="mb-3">
+        <label class="form-label" for="email-input">NYP Email:</label>
+        <input class="form-control" type="email" name="emailAddress" placeholder="E.g. 123456Y@mymail.nyp.edu.sg"
+          id="email-input" required>
+        <div class="invalid-feedback">Please enter a valid NYP email.</div>
+      </div>
+      
       <div class="mb-3">
         <label class="form-label">Year:</label>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="entry.207949549" id="entry.20794954-PFP" value="PFP"
+          <input class="form-check-input" type="radio" name="entry.207949549" id="entry.207949549-PFP" value="PFP"
             required>
-          <label class="form-check-label" for="entry.20794954-PFP">PFP</label>
+          <label class="form-check-label" for="entry.207949549-PFP">PFP</label>
         </div>
         <div class="form-check">
           <input class="form-check-input" type="radio" name="entry.207949549" id="entry.207949549-YEAR-1" value="Year 1"
@@ -194,16 +204,22 @@
             <h1 class="modal-title fs-3" id="formResponseLabel">Response Submitted!</h1>
           </div>
           <div class="modal-body">
-            <p>Thank you for joining us. We will contact you about when the next CCA session is. Look out for this email as it may end up in the spam.</p>
+            <p>Thank you for joining us! We will contact you about when the next CCA session is. Look out an WhatsApp text or email from us!</p>
             <h4>Your Submission:</h4>
             <div id="FormResponse" class="border p-3 rounded">
               <div class="mb-3">
-                <label class="form-label" for="email-response">NYP Email:</label>
-                <input class="form-control" type="email" id="email-response" readonly disabled>
-              </div>
-              <div class="mb-3">
                 <label class="form-label" for="name-response">Full Name:</label>
                 <input class="form-control" type="text" id="name-response" readonly disabled>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label" for="phone-response">Phone Number:</label>
+                <input class="form-control" type="text" id="phone-response" readonly disabled>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label" for="email-response">NYP Email:</label>
+                <input class="form-control" type="email" id="email-response" readonly disabled>
               </div>
 
               <div class="row">

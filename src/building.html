@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Share+Tech+Mono&display=swap"
     rel="stylesheet">
-  
+
   <!-- LOAD ICONS -->
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=keyboard_double_arrow_down,manufacturing,mop,rocket_launch,touch_app">
@@ -17,14 +17,14 @@
   <!-- Title & Favicon -->
   <title>NYP Robotics Interest Group &#x2013 Building</title>
   <link rel="icon" href="./assets/images/favicon.png">
-  
+
   <!-- LOAD STYLES CONTAINING BOOTSTRAP -->
   <link rel="stylesheet" href="./scss/pageCover.scss">
   <link rel="stylesheet" href="./scss/carousel.scss">
 
   <!-- PRERENDER OR PREFETCH PAGES IN CHROME FOR INSTANT PAGE NAVIGATIONS -->
   <!-- SEE https://developer.chrome.com/docs/web-platform/prerender-pages for more info -->
-  <script type="speculationrules">
+  <!-- <script type="speculationrules">
     {
       "prerender": [
         {
@@ -33,7 +33,7 @@
       ]
     }
   </script>
-</head>
+</head> -->
 
 <body>
   <!-- LOGO REVEAL INTRO SCREEN -->
@@ -56,8 +56,8 @@
     if (window.location.hash == '#introScreen' || (document.referrer && document.referrer.startsWith(window.location.origin))) {
       document.getElementById('introScreen').remove();
     }
-    else{
-      if (!(document.referrer && document.referrer.startsWith(window.location.origin))){
+    else {
+      if (!(document.referrer && document.referrer.startsWith(window.location.origin))) {
         window.location.hash = '#introScreen'
       }
     }
@@ -84,17 +84,20 @@
           <li class="nav-item">
             <a class="nav-link" href="/programming">Programming</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/events">Events</a>
+          </li>
           <!-- <li class="nav-item">
             <a class="nav-link" href="#">Our Team</a>
           </li> -->
-          <li class="nav-item dropdown">
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Others
             </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="./timetable">Timetable</a></li>
             </ul>
-          </li>
+          </li> -->
         </ul>
         <div class="join-us-nav-btn-contain">
           <a class="btn btn-primary has-loading-aft-click" href="/join-us">Join Us</a>
@@ -109,7 +112,7 @@
     <!-- START OF PAGE COVER -->
     <div class="section">
       <!-- BACKGROUND IMAGE AS ELEMENT INSTEAD OF CSS `background-image` FOR SPECIAL CSS ANIMATIONS -->
-      <img class="sectionMedia" src="./assets/images/building/buildingBgTop.png" alt="bg-image"></img>
+      <img class="sectionMedia" src="./assets/images/building/buildingBgTop.png" alt="bg-image" />
       <div class="sectionWordContain">
         <div class="mainWordContain">
           <h1>Building</h1>
@@ -140,19 +143,14 @@
                   <div class="card-inner">
                     <div class="card-front">
                       <div class="card-content">
-                        <div class="memory-date">Remote-Controlled CuteBot Pro Robot
-                        </div>
-                        <h3></h3>
+                        <div class="memory-date">BBC Micro:Bit</div>
+                        <h3>Cute Bot Pro</h3>
                         <div class="memory-image">
-                          <img src="./assets/images/building/teams.png" alt="team members"></img>
+                          <img src="./assets/images/building/cute-bot-pro.png" alt="Placeholder Image" />
                           <div class="glitch-effect"></div>
                         </div>
                         <p class="memory-preview">
-                          Preview: Our team placed <span><a href="https://www.technoxian.com/robosoccer">1st</a></span>
-                          in the RoboSoccer challenge!
-                          <br>
-                          Location: Singapore Polytechnic Arena
-                          <br>
+                          This is the Micro:Bit Cute Bot Pro which can sense and recognise certain printed symbols.
                         </p>
                         <div class="card-glow"></div>
                       </div>
@@ -160,12 +158,11 @@
                     <div class="card-back">
                       <div class="card-content">
                         <p>
-                          Fast reflexes, smart coding, and lots of testing helped us build a bot that could defend and
-                          score goals. Teams of 3 wireless bots chase a ball around a big-sized arena with the aim of
-                          kicking more goals than the opponent. This game gives the opportunity for youngsters to solve
-                          robotic challenges and build creative bots while learning science, technology, engineering,
-                          and math. The most rewarding part of designing bots is that students have fun and work
-                          together as a team, and learning occurs as naturally as breathing air.
+                          This Micro:Bit robot has a Vision camera attached, which lets it recognise certain pictures or
+                          symbols that can be places around the map.
+                          <br /><br />
+                          The Micro:Bit robot can also be coded to compete in line tracing competitons or even
+                          comtrolled remotely.
                         </p>
                       </div>
                     </div>
@@ -175,28 +172,29 @@
                   <div class="card-inner">
                     <div class="card-front">
                       <div class="card-content">
-                        <div class="memory-date">Maze-Solving Maqueen Pro Robot</div>
+                        <div class="memory-date">Vex Robotics</div>
+                        <h3>Vex V5</h3>
                         <div class="memory-image">
-                          <img src="./assets/images/building/line-tracing-robot.png" alt="line-tracing-robot"></img>
+                          <img src="./assets/images/building/vex.png" alt="Placeholder Image" />
                           <div class="glitch-effect"></div>
                         </div>
                         <p class="memory-preview">
-                          Our theme focuses on creating a autonomous cleaning robot that provides assistance to those who may have difficulty cleaning on their own, such as the elderlies and the disabled
+                          This is a skeleton robot for 25-26 season of Vex Robotics which main goal is to pick up and
+                          score objects around the field.
                         </p>
                         <div class="card-glow"></div>
                       </div>
                     </div>
                     <div class="card-back">
                       <div class="card-content">
-                        <h3> Created a robot bot to autonomously move by following the lines on the floor and avoid
-                          objects in front of it. The robot is equipped with a mop to clean the floor dry. It uses
-                          sensors to detect the lines and obstacles, and it can navigate through a maze-like
-                          environment.
-                          This project showcases our skills in robotics, programming, and problem-solving. We used the
-                          Maqueen Pro robot platform, which is designed for educational purposes and allows us to easily
-                          build and program robots.
-                        </h3>
-
+                        <p>
+                          We are competiting in Vex Robotics at the University level and am using 3D CAD software to
+                          design our robots before making them with either the Vex offical materials, 3D materials or
+                          sheet metal inorder to complete the game&apos;s objectives.
+                          <br /><br />
+                          The robot uses C++ language to communicate with the controllers and move the robot
+                          autonomosly.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -205,28 +203,27 @@
                   <div class="card-inner">
                     <div class="card-front">
                       <div class="card-content">
-                        <div class="memory-date">Raspberry Pi and Pi HAT: The Tiny Computer Behind Our Robots </div>
+                        <div class="memory-date">RoboMaster</div>
+                        <h3>DJI RoboMaster S1</h3>
                         <div class="memory-image">
-                          <img src="./assets/images/building/mini-computer.png" alt="mini-computer"></img>
+                          <img src="./assets/images/building/robomaster.png" alt="Placeholder Image" />
                           <div class="glitch-effect"></div>
                         </div>
                         <p class="memory-preview">
-                          The secret mini-computer that powers our robots.
+                          This is one of our Robomaster robots which we use for events and internal CCA competitions.
                         </p>
                         <div class="card-glow"></div>
                       </div>
                     </div>
                     <div class="card-back">
                       <div class="card-content">
-                        <h3>The Raspberry Pi is a small but powerful computer that fits in your palm. We use it in our
-                          robotics projects to run code, control motors, and process sensor data.
-
-                          When paired with Pi HATs (add-on boards that stack on top), we can easily add features like
-                          motor control, sensors, camera vision, and more — no messy wires needed!
-
-                          With the Raspberry Pi, our robots can think, see, and even learn.
-                        </h3>
-
+                        <p>
+                          The robomaster robots shoot a laser to complete time trials or compete against other robots by
+                          shooting the sensors around the robots.
+                          <br /><br />
+                          These robots have the capability to be modified inorder to fulfil different game objectives
+                          using 3D printed parts.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -235,14 +232,14 @@
                   <div class="card-inner">
                     <div class="card-front">
                       <div class="card-content">
-                        <div class="memory-date"></div>
-                        <h3>Our goal in 2024</h3>
+                        <div class="memory-date">Miscellaneous</div>
+                        <h3>P1S Bamboo 3D Printers</h3>
                         <div class="memory-image">
-                          <img src="./assets/images/building/cleaning_robots.png" alt="cleaning_robots"></img>
+                          <img src="./assets/images/building/3d-printer.png" alt="Placeholder Image" />
                           <div class="glitch-effect"></div>
                         </div>
                         <p class="memory-preview">
-                          Create 7 cleaning bots that can assist cleaners with cleaning the 7 different schools in NYP
+                          These are our own 3D printers that are exclusive to RIG (Robotics Interest Group) students.
                         </p>
                         <div class="card-glow"></div>
                       </div>
@@ -250,17 +247,8 @@
                     <div class="card-back">
                       <div class="card-content">
                         <p>
-                          Obstacle avoidance using ultrasonic sensors or LiDAR.
-
-                          Voice command or mobile app control for staff.
-
-                          Cleaning modes: vacuum, mop, UV, or air-purifier.
-
-                          Self-docking & charging.
-
-                          Real-time route optimization based on foot traffic data.
-                          Autodetection of stair cases and humans so that won't collide and spoil.
-                          Can send cleaning reports or alert staff if extra attention is needed.
+                          These are P1S Bamboo printer that we use to print 3D parts for our robots, competitions or
+                          events.
                         </p>
                       </div>
                     </div>
@@ -270,54 +258,61 @@
                   <div class="card-inner">
                     <div class="card-front">
                       <div class="card-content">
-                        <div class="memory-date"></div>
-                        <h3> Explore the Acebott DIY Smart Car Kit!
-                        </h3>
+                        <div class="memory-date">Miscellaneous</div>
+                        <h3>Waveshare UGV Rover</h3>
                         <div class="memory-image">
-                          <img src="./assets/images/building/shooting_bot.png" alt="shooting_bot"></img>
+                          <img src="./assets/images/building/ugv-rover.png" alt="Placeholder Image" />
                           <div class="glitch-effect"></div>
                         </div>
                         <p class="memory-preview">
-                          From the invention of army tanks, we decided to build and upgrade our Acebott DIY with a
-                          Shooting Car Expansion Pack
+                          This rover has a LiDAR (Laser Imaging, Detection, and Ranging) sensor that helps it map out
+                          and log items in a room.
                         </p>
                         <div class="card-glow"></div>
                       </div>
                     </div>
                     <div class="card-back">
                       <div class="card-content">
-                        <h3>This advanced kit features Mecanum wheels, 4-wheel drive, and app control, along with
-                          exciting functions like obstacle avoidance, line following, and follow mode.
-                          We've even upgraded it with the Shooting Car Expansion Pack — transforming it into a mini
-                          Orbeez-firing tank for the ultimate robotics experience! 😎</h3>
+                        <p>
+                          This rover can be programmed to move around a room to identify objects and obstacles and
+                          record them in a seperate library.
+                          <br /><br />
+                          The locations of the objects and obstacles are also recorded and can be recalled if needed.
+                        </p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="memory-card" data-memory-id="5">
+                <!-- <div class="memory-card" data-memory-id="5">
                   <div class="card-inner">
                     <div class="card-front">
                       <div class="card-content">
-                        <div class="memory-date"></div>
-                        <h3>Obstacle Avoidance Bot</h3>
+                        <div class="memory-date">Sub-Title</div>
+                        <h3>Title</h3>
                         <div class="memory-image">
-                          <img  src="./assets/images/building/huskylens.png" alt="huskylens-robot"></img>
+                          <img src="https://placehold.co/2048x1536" alt="Placeholder Image" />
                           <div class="glitch-effect"></div>
                         </div>
                         <p class="memory-preview">
+                          Short Description
                         </p>
                         <div class="card-glow"></div>
                       </div>
                     </div>
                     <div class="card-back">
                       <div class="card-content">
-                        <h3>Using Arduino and ultrasonic modules and huskylens, this bot reacts in real-time to avoid
-                          collisions and classifies object with trained data. Great for teaching sensor input and motor
-                          control logic.</h3>
+                        <p>
+                          Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae
+                          pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean
+                          sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis
+                          massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti
+                          sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos.
+                        </p>
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
+
                 <!-- END OF CAROUSEL ITEMS -->
               </div>
             </div>
@@ -329,7 +324,7 @@
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
             </a>
             <!-- END OF CAROUSEL CONTROLS -->
-            
+
             <!-- START OF CAROUSEL INSTRUCTIONS -->
             <div class="carousel-instructions">
               <div class="instruction-page">
@@ -348,7 +343,8 @@
     <div class="section benefits-contain">
       <div class="sectionMediaContain">
         <!-- BACKGROUND IMAGE IN DIV INSTEAD OF CSS `background-image` FOR SPECIAL CSS ANIMATIONS -->
-        <img class="sectionMedia has-blur" src="./assets/images/building/buildingBgBottom.png" alt="A blurred image of a preson controlling a robot."></img>
+        <img class="sectionMedia has-blur" src="./assets/images/building/buildingBgBottom.png"
+          alt="A blurred image of a preson controlling a robot." />
       </div>
       <div class="box-contain"><!-- DIV IN DIV FOR SPECIAL CSS ANIMATIONS -->
         <div class="box">
@@ -380,8 +376,8 @@
   </div>
   <!-- END OF ROOT CONTAINER -->
 
-<!-- MAIN JS FILE TO HANDLE ANIMATIONS WHEN USERS SCROLL -->
-<!-- JavaScript Link Embedded Directly to HTML pages -->
+  <!-- MAIN JS FILE TO HANDLE ANIMATIONS WHEN USERS SCROLL -->
+  <!-- JavaScript Link Embedded Directly to HTML pages -->
   <script src="./js/index.js" type="module"></script>
 </body>
 

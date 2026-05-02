@@ -5,6 +5,7 @@ import { Modal } from 'bootstrap';
 const formFieldMappings = {
   'emailAddress': 'email-response',
   'entry.851075444': 'name-response',
+  'entry.1485536765': 'phone-response',
   'entry.207949549': 'year-response',
   'entry.725278553': 'school-response',
   'entry.897263461': 'class-response',
@@ -67,31 +68,32 @@ $(() => {
 
       // Show feedback messages
       $('#joinForm').addClass('was-validated')
+      return false;
     }
     else {
-      event.preventDefault();
-      // Show feedback messages
-      $('#joinForm').addClass('was-validated');
-      const formData = new FormData($('#joinForm')[0]);
-      fetch('https://docs.google.com/forms/d/e/1FAIpQLSfsMr1gZWeCYxm56wmyequeWXvSGnZL1knWkdR3IWcYGVo6Ag/formResponse', {
-        method: 'POST',
-        body: formData,
-        mode: 'no-cors'// Since we only want to send data and Google Forms which uses CORS, 
-        // we use `no-cors` so that we can send the data and bypass CORS.
-      }).then(() => {
-        for (const fieldEntry of formData.entries()) {
-          const [fieldName, fieldValue] = fieldEntry;
-          if (formFieldMappings[fieldName]) {
-            $(`#${formFieldMappings[fieldName]}`).val(fieldValue)
-          }
-        }
-        formResponseModal.show();
-      }).catch(() => {
-        alert('An error occured when trying to submit the form. Please try again!');
-        window.location.reload();
-      });
+      // event.preventDefault();
+      // // Show feedback messages
+      // $('#joinForm').addClass('was-validated');
+      // const formData = new FormData($('#joinForm')[0]);
+      // fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLScijvgVreEVfk9CXr-zwfA7ffKTs8rQWrGrkHsmSa4f6rctyA/formResponse', {
+      //   method: 'POST',
+      //   body: formData,
+      //   // mode: 'no-cors'// Since we only want to send data and Google Forms which uses CORS, 
+      //   // we use `no-cors` so that we can send the data and bypass CORS.
+      // }).then(() => {
+      //   for (const fieldEntry of formData.entries()) {
+      //     const [fieldName, fieldValue] = fieldEntry;
+      //     if (formFieldMappings[fieldName]) {
+      //       $(`#${formFieldMappings[fieldName]}`).val(fieldValue)
+      //     }
+      //   }
+      //   formResponseModal.show();
+      // }).catch(() => {
+      //   alert('An error occured when trying to submit the form. Please try again!');
+      //   window.location.reload();
+      // });
     }
-    return false;
+    // return false;
   });
 
   // Validate Email Input

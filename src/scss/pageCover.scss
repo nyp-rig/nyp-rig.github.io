@@ -1,7 +1,7 @@
 @use "sass:map";
 @import "./base.scss";
 
-.section{
+.section {
   position: relative;
   // min-height: 100dvh;
   flex-basis: 100dvh;
@@ -17,7 +17,7 @@
   // scroll-snap-stop: always;
 }
 
-.sectionMedia{
+.sectionMedia {
   position: absolute;
   object-fit: cover;
   height: 100%;
@@ -29,11 +29,13 @@
   user-select: none;
   // animation: mediaIntroKeyframe 1s forwards;
 }
-.section .sectionMediaContain{
+
+.section .sectionMediaContain {
   position: absolute;
   inset: 0;
 }
-.section .sectionMediaContain .sectionMedia{
+
+.section .sectionMediaContain .sectionMedia {
   position: sticky;
   transform: none;
   top: 0;
@@ -43,22 +45,25 @@
   width: 100%;
 }
 
-.section > .sectionMedia, .section > .sectionMediaContain > .sectionMedia{
+.section>.sectionMedia,
+.section>.sectionMediaContain>.sectionMedia {
   opacity: 0;
   scale: 1.5;
   transition: all 1s;
 }
-.section.is-in-view > .sectionMedia, .section.is-in-view > .sectionMediaContain > .sectionMedia{
+
+.section.is-in-view>.sectionMedia,
+.section.is-in-view>.sectionMediaContain>.sectionMedia {
   opacity: 1;
   scale: 1;
   transition: all 1s;
 }
 
-.sectionMedia.has-blur{
+.sectionMedia.has-blur {
   filter: blur(3px);
 }
 
-.sectionWordContain{
+.sectionWordContain {
   position: absolute;
   bottom: 12dvh;
   right: 10dvh;
@@ -66,18 +71,19 @@
   overflow: hidden;
 }
 
-.section .sectionWordContain .mainWordContain{
+.section .sectionWordContain .mainWordContain {
   position: relative;
   background-color: black;
   padding: 0.5rem;
   translate: 150% 0%;
   transition: translate 1s ease-out;
 }
-.section.is-in-view .sectionWordContain .mainWordContain{
+
+.section.is-in-view .sectionWordContain .mainWordContain {
   translate: 0% 0%;
 }
 
-.section .sectionWordContain .mainWordContain::before{
+.section .sectionWordContain .mainWordContain::before {
   position: absolute;
   inset: 0;
   content: "";
@@ -87,7 +93,8 @@
   translate: 50% 0%;
   transition: translate 0.75s ease-out;
 }
-.section .sectionWordContain .mainWordContain::after{
+
+.section .sectionWordContain .mainWordContain::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -97,12 +104,14 @@
   translate: 50% 0%;
   transition: translate 1s ease-out;
 }
-.section.is-in-view .sectionWordContain .mainWordContain::before, .section.is-in-view .sectionWordContain .mainWordContain::after{
+
+.section.is-in-view .sectionWordContain .mainWordContain::before,
+.section.is-in-view .sectionWordContain .mainWordContain::after {
   translate: -101% 0%;
 }
 
 
-.section > .down-arrow-container{
+.section>.down-arrow-container {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -114,55 +123,65 @@
   transition: 0.5s ease-out;
 }
 
-.section.is-in-view > .down-arrow-container{
+.section.is-in-view>.down-arrow-container {
   transition-delay: 1s;
   opacity: 1;
 }
 
-.down-arrow-container p{
-  margin-bottom: 0;  
+.down-arrow-container p {
+  margin-bottom: 0;
   font-size: 1.5rem;
-  text-shadow: 
-  -2px -2px 6px #000,
-  2px 2px 6px #000;
+  text-shadow:
+    -2px -2px 6px #000,
+    2px 2px 6px #000;
 }
 
-.down-arrow-container .down-arrow{
+.down-arrow-container .down-arrow {
   user-select: none;
   font-size: 3rem;
   margin-top: -0.5rem;
-  text-shadow: 
-  -2px -2px 12px #000,
-  2px 2px 12px #000;
+  text-shadow:
+    -2px -2px 12px #000,
+    2px 2px 12px #000;
   animation: bounce-arrow 1s ease-in-out infinite;
 
 }
 
 @media (max-width: 400px) {
-  .down-arrow-container p{
+  .down-arrow-container p {
     font-size: 1.25rem;
-  } 
-  .down-arrow-container .down-arrow{
+  }
+
+  .down-arrow-container .down-arrow {
     margin-top: -0.25rem;
     font-size: 2rem;
   }
 }
 
 @keyframes bounce-arrow {
-  0%, 100% { transform: translateY(0%); }
-  50%      { transform: translateY(20%); }
+
+  0%,
+  100% {
+    transform: translateY(0%);
+  }
+
+  50% {
+    transform: translateY(20%);
+  }
 }
 
-.benefits-contain{
+.benefits-contain {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-.benefits-contain .box-contain{
+
+.benefits-contain .box-contain {
   position: relative;
 }
-.benefits-contain .box-contain .box{
+
+.benefits-contain .box-contain .box {
   opacity: 0;
   background-color: black;
   color: white;
@@ -176,7 +195,8 @@
   min-width: 350px;
   text-align: center;
 }
-.benefits-contain .box-contain::after{
+
+.benefits-contain .box-contain::after {
   position: absolute;
   inset: 0;
   width: 0%;
@@ -186,43 +206,53 @@
   content: "";
   pointer-events: none;
 }
-.benefits-contain.section.is-in-view .box-contain::after{
+
+.benefits-contain.section.is-in-view .box-contain::after {
   animation: boxIntroAnim 0.5s linear forwards;
 }
-.benefits-contain.section.is-in-view .box-contain .box{
+
+.benefits-contain.section.is-in-view .box-contain .box {
   transition-delay: 0.25s;
   opacity: 1;
 }
-.benefits-contain.section.is-in-view .box-contain .box h3, .benefits-contain.section.is-in-view .box-contain .box p{
+
+.benefits-contain.section.is-in-view .box-contain .box h3,
+.benefits-contain.section.is-in-view .box-contain .box p {
   margin-bottom: 0;
 }
-.benefits-contain.section.is-in-view .box-contain .box .btn{
+
+.benefits-contain.section.is-in-view .box-contain .box .btn {
   margin-bottom: 0.5rem;
   translate: 0% 0%;
   transition: translate 0.2s;
 }
-.benefits-contain.section.is-in-view .box-contain .box .btn:hover{
+
+.benefits-contain.section.is-in-view .box-contain .box .btn:hover {
   translate: 0% -10%;
 }
+
 @keyframes boxIntroAnim {
-  0%{
+  0% {
     opacity: 0;
     width: 0%;
   }
-  10%{
+
+  10% {
     opacity: 1;
   }
-  66%{
+
+  66% {
     opacity: 1;
   }
-  100%{
+
+  100% {
     opacity: 0;
     width: 100%;
   }
 }
 
 
-.section .cardsContainer{
+.section .cardsContainer {
   margin: 1rem 0;
   display: flex;
   flex-direction: row;
@@ -231,7 +261,8 @@
   flex-wrap: wrap;
   gap: 1rem;
 }
-.section .cardsContainer .card{
+
+.section .cardsContainer .card {
   min-width: 200px;
   flex: 1;
   padding: 0.5rem;
@@ -239,7 +270,8 @@
   border: none;
   background: none;
 }
-.section .cardsContainer .card .icon{
+
+.section .cardsContainer .card .icon {
   font-size: 4rem;
   user-select: none;
   padding: 0.5rem;
