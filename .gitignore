@@ -2,7 +2,6 @@ dist/
 node_modules/
 .parcel-cache/
 .early.coverage/
-.vscode/
 *.DS_Store
 *.zip
 src/assets/Robotics_Images
