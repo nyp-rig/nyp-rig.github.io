@@ -14,14 +14,33 @@
   "devDependencies": {
     "@parcel/config-default": "^2.15.4",
     "@parcel/transformer-raw": "^2.15.4",
-    "@parcel/transformer-sass": "2.15.4",
+    "@parcel/transformer-sass": "2.16.4",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.7",
     "jquery": "^3.7.1",
     "parcel": "^2.15.4",
+    "parcel-reporter-static-files-copy": "^1.5.3",
     "rimraf": "^6.0.1"
   },
   "dependencies": {
     "@parcel/watcher": "^2.5.1"
-  }
+  },
+  "staticFiles": [
+    {
+      "staticPath": "src/assets/images/bg.png",
+      "staticOutPath": "assets/images/"
+    },
+    {
+      "staticPath": "src/assets/images/eventsBg.png",
+      "staticOutPath": "assets/images/"
+    },
+    {
+      "staticPath": "src/assets/images/building/buildingBgTop.png",
+      "staticOutPath": "assets/images/building/"
+    },
+    {
+      "staticPath": "src/assets/images/programmng/programmingBgTop.png",
+      "staticOutPath": "assets/images/programmng/"
+    }
+  ]
 }
