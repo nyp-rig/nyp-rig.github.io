@@ -1,19 +1,19 @@
 # NYP Robotics CCA Website
 By Azlan and Lucas.<br>
-**NOTE:** [Node JS](https://nodejs.org) is required to package and compile the website.
+**NOTE:** [Node JS](https://nodejs.org) and [pnpm](https://pnpm.io/installation#using-npm) is required to package and compile the website.
 
 ## Installing
 ```cmd
-npm install
+pnpm install
 ```
 
 ## Building
 ```cmd
-npm run build
+pnpm run build
 ```
 Output files will be at `./dist`
 
 ## Development/Testing/Running The Project
 ```cmd
-npm run dev
+pnpm run dev
 ```
