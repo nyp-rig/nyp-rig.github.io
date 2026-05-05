@@ -21,6 +21,10 @@ $(window).on('pageshow', () => {
 
 // ON DOCUMENT READY
 $(() => {
+  $('#phone-input').on('input', function () {
+    $(this).val($(this).val().replace(/[^0-9\s+-]/g, ''));
+  });
+
   const formResponseModal = new Modal('#formResponse', { keyboard: false });
 
   // Prevent Enter from triggering form submission.
